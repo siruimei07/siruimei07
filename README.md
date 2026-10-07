@@ -9,8 +9,8 @@
     <img src="./assets/isocalendar-light.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-dark.svg" />
-    <img src="./assets/languages-light.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-card-dark.svg" />
+    <img src="./assets/languages-card-light.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
   </picture>
 </p>
 

@@ -143,7 +143,8 @@ try {
       return node.outerHTML;
     });
     const notice=`<!-- Generated from lowlighter/metrics @ ${revision}, MIT license. Data: public GitHub pages/API only; calendar fetched anonymously. -->\n`;
-    const out=path.join(output,`${name}-${mode}.svg`);
+    const assetName=name==='languages'?'languages-card':name;
+    const out=path.join(output,`${assetName}-${mode}.svg`);
     generated.push({out,content:(notice+svg).replace(/[\t ]+$/gm,'')});
     const h=await page.$eval('svg',node=>Number(node.getAttribute('height')));
     await page.setViewport({width:480,height:h,deviceScaleFactor:2});
