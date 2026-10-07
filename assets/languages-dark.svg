@@ -1,5 +1,5 @@
 <!-- Generated from lowlighter/metrics @ 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d, MIT license. Data: public GitHub pages/API only; calendar fetched anonymously. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="128" class=" no-animations" role="img" aria-label="7 Languages">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="166" class=" no-animations" viewBox="0 0 480 166" preserveAspectRatio="xMinYMin meet" role="img" aria-label="7 Languages">
 
   <defs><style></style></defs>
   <style data-optimizable="true">/* SVG global context */
@@ -1672,7 +1672,7 @@
     caret-color: transparent !important;
   }
 </style>
-  <style>svg { color: #b1bac4; } h1, h2, h3 { color: #58a6ff; } .field svg { fill: #b1bac4; } .field.language.details small { color: #b1bac4; }</style>
+  <style>svg { color: #b1bac4; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: #58a6ff; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: #b1bac4; } .field.language.details small { color: #b1bac4; font-size: 12px; line-height: 20px; }</style>
 
   <foreignObject x="0" y="0" width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" class="items-wrapper">

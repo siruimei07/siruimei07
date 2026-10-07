@@ -118,7 +118,7 @@ const generated=[];
 try {
  for(const mode of ['light','dark']) {
   const color=mode==='dark'?'#b1bac4':'#59636e', accent=mode==='dark'?'#58a6ff':'#0969da';
-  const extrasCss=`svg { color: ${color}; } h1, h2, h3 { color: ${accent}; } .field svg { fill: ${color}; } .field.language.details small { color: ${color}; }`;
+  const extrasCss=`svg { color: ${color}; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: ${accent}; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: ${color}; } .field.language.details small { color: ${color}; font-size: 12px; line-height: 20px; }`;
   for(const [name,data] of [['isocalendar',iso],['languages',lang]]) {
     const themedData=name==='isocalendar'&&mode==='dark'?{...data,svg:data.svg.replaceAll('#ebedf0','#161b22').replaceAll('#9be9a8','#0e4429').replaceAll('#40c463','#006d32').replaceAll('#30a14e','#26a641').replaceAll('#216e39','#39d353')}:data;
     const context={large:false,columns:false,animated:false,fonts:'',style:css,extras:{css:extrasCss},warnings:[],partials:[name],base:{metadata:false},plugins:{[name]:themedData},s:n=>n===1?'':'s',f};
@@ -132,8 +132,12 @@ try {
     await page.addStyleTag({content:`body{margin:0;padding:0;background:${mode==='dark'?'#0d1117':'#ffffff'}}`});
     const svg=await page.evaluate(()=>{
       const node=document.querySelector('svg');
-      const height=Math.ceil(document.querySelector('#metrics-end').getBoundingClientRect().y)+4;
+      // Explicit line heights above keep Linux/Windows layout stable. Extra space
+      // protects the last row against browser/font rounding in embedded SVGs.
+      const height=Math.ceil(document.querySelector('#metrics-end').getBoundingClientRect().y)+20;
       node.setAttribute('height',height);
+      node.setAttribute('viewBox',`0 0 480 ${height}`);
+      node.setAttribute('preserveAspectRatio','xMinYMin meet');
       node.setAttribute('role','img');
       node.setAttribute('aria-label',document.querySelector('h2')?.textContent.trim()||'GitHub metrics');
       return node.outerHTML;

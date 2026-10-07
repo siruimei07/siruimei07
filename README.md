@@ -3,19 +3,16 @@
   <img src="./assets/banner.png" width="100%" alt="A collection of illustrated landscapes rotates every 12 seconds, with each scene fading into the page." />
 </picture>
 
-## Contributions
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/isocalendar-dark.svg" />
-  <img src="./assets/isocalendar-light.svg" width="720" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
-</picture>
-
-## Languages
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-dark.svg" />
-  <img src="./assets/languages-light.svg" width="720" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
-</picture>
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/isocalendar-dark.svg" />
+    <img src="./assets/isocalendar-light.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-dark.svg" />
+    <img src="./assets/languages-light.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
+  </picture>
+</p>
 
 ## Public repositories
 
