@@ -1,0 +1,10 @@
+/work/
+/.cache/
+node_modules/
+__pycache__/
+*.pyc
+
+# Original upload locations are retained locally; tracked copies live in banners/originals/.
+/47_i13_1.png
+/60_i09.png
+/61_i21.png

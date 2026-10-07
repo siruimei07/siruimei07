@@ -1,0 +1,12 @@
+{
+  "name": "public-github-profile-metrics",
+  "private": true,
+  "type": "module",
+  "scripts": { "render": "node render.mjs" },
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "ejs": "3.1.10",
+    "jsdom": "26.1.0",
+    "puppeteer-core": "25.12.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "metricsRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
+  "metricsSource": "https://github.com/lowlighter/metrics",
+  "linguistRevision": "5fbdfcb8133be2bed88bf3ce62b2335f50474525",
+  "linguistSource": "https://github.com/github-linguist/linguist/blob/5fbdfcb8133be2bed88bf3ce62b2335f50474525/lib/linguist/languages.yml",
+  "notes": "Metric source files are unmodified. The adapter disables unused deep/recent language analyzer imports in memory. Language colors are derived from the pinned official Linguist YAML.",
+  "sha256": {
+    "language-colors.json": "cb5d6890ad27828969214c93fb114724cab2a10d7ae241077369acfb484a0ef7",
+    "LINGUIST-LICENSE": "7717070c5a8c85440ff2312930bb30dd19002ab5bc235c9800042767f6f5242f",
+    "metrics/LICENSE": "c1732c4ec27896bc3820f6b01cd1d5659595e595e9e562e91eda368950e752b6",
+    "metrics/source/plugins/isocalendar/index.mjs": "c4081423e57b98882a262e24db7621f19ee326065ed9ca0ff2a622cf3a2a5e5f",
+    "metrics/source/plugins/languages/colorsets.json": "6aea496b9f4638e2bab2592961c12c7ce9d64949cfe7d9f5981e0bca65acdcef",
+    "metrics/source/plugins/languages/index.mjs": "ae076c90d93b0ef5c1f07269fca31722a32017dfa22b84f7ec4784f45b0768cf",
+    "metrics/source/templates/classic/image.svg": "db72fcb9692657d7e45c8db7d15ff810f49ad21581403bacbfd4df8aee76cc66",
+    "metrics/source/templates/classic/style.css": "588692b97ffe82aa7cc6602453e5e6b1133b664efbbe2c743d7ca0af024a4e92",
+    "metrics/source/templates/classic/partials/isocalendar.ejs": "90802705750855b53f4fcaac6d559c1a2f5f347e4abf62e664f7c811678be4bc",
+    "metrics/source/templates/classic/partials/languages.ejs": "6ee8a767e36bb3bea69062482f1aa9bce417b7c494ace4f8311759b6661bb4f4"
+  }
+}

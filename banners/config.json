@@ -1,0 +1,10 @@
+{
+  "selection": "slideshow",
+  "interval_ms": 12000,
+  "default": "60_i09.png",
+  "images": {
+    "47_i13_1.png": { "crop_y": 160 },
+    "60_i09.png": { "crop_y": 250 },
+    "61_i21.png": { "crop_y": 250 }
+  }
+}

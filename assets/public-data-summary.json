@@ -1,0 +1,47 @@
+{
+  "sourceRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
+  "generatedAt": "2026-10-07T05:36:11.208Z",
+  "repositories": [
+    "siruimei07.github.io",
+    "GUI-for-RePKG"
+  ],
+  "calendar": {
+    "source": "anonymous public GitHub contribution pages",
+    "daysFetched": 730,
+    "bestStreak": 15,
+    "maxPerDay": 139,
+    "averagePerDay": "2.17"
+  },
+  "languages": [
+    {
+      "name": "C#",
+      "percentage": 65.76009865339097,
+      "bytes": 2157577
+    },
+    {
+      "name": "TypeScript",
+      "percentage": 28.170498954276496,
+      "bytes": 924269
+    },
+    {
+      "name": "PowerShell",
+      "percentage": 3.2436020679174713,
+      "bytes": 106422
+    },
+    {
+      "name": "CSS",
+      "percentage": 2.130764508918366,
+      "bytes": 69910
+    },
+    {
+      "name": "JavaScript",
+      "percentage": 0.642551528780103,
+      "bytes": 21082
+    },
+    {
+      "name": "Other",
+      "percentage": 0.052484286716598876,
+      "bytes": 1722
+    }
+  ]
+}
