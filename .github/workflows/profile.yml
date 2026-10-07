@@ -51,6 +51,9 @@ jobs:
           python -m pip install Pillow==12.3.0
           npm ci --prefix scripts/metrics --ignore-scripts
 
+      - name: Check Metrics adapters
+        run: node --test scripts/metrics/activity.test.mjs scripts/metrics/traffic.test.mjs
+
       - name: Build banner
         env:
           BANNER_SELECTION: ${{ inputs.banner }}
@@ -66,9 +69,10 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/update_repositories.py
 
-      - name: Render Metrics from public data
+      - name: Render profile Metrics
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
           METRICS_OUTPUT_DIR: assets
         run: node scripts/metrics/render.mjs
 

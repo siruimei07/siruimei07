@@ -23,3 +23,14 @@
 | [siruimei07.github.io](https://github.com/siruimei07/siruimei07.github.io) | personal website | TypeScript |
 | [GUI-for-RePKG](https://github.com/siruimei07/GUI-for-RePKG) | An extensible C# WPF frontend with an Endfield-inspired maximal UI, rich motion, responsive navigation, and backend extension points. | C# |
 <!-- PUBLIC-REPOS:END -->
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-dark.svg" />
+    <img src="./assets/activity-light.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/traffic-dark.svg" />
+    <img src="./assets/traffic-light.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+  </picture>
+</p>

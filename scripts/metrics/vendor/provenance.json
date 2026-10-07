@@ -3,7 +3,7 @@
   "metricsSource": "https://github.com/lowlighter/metrics",
   "linguistRevision": "5fbdfcb8133be2bed88bf3ce62b2335f50474525",
   "linguistSource": "https://github.com/github-linguist/linguist/blob/5fbdfcb8133be2bed88bf3ce62b2335f50474525/lib/linguist/languages.yml",
-  "notes": "Metric source files are unmodified. The adapter disables unused deep/recent language analyzer imports in memory. Language colors are derived from the pinned official Linguist YAML.",
+  "notes": "Metric source files are unmodified. The adapter disables unused language analyzers and adapts reduced activity event payloads in memory. A separate template presents official traffic totals as a standalone card. Language colors are derived from the pinned official Linguist YAML.",
   "sha256": {
     "language-colors.json": "cb5d6890ad27828969214c93fb114724cab2a10d7ae241077369acfb484a0ef7",
     "LINGUIST-LICENSE": "7717070c5a8c85440ff2312930bb30dd19002ab5bc235c9800042767f6f5242f",
@@ -14,6 +14,9 @@
     "metrics/source/templates/classic/image.svg": "51ab9e90e9f7c94f0c0078e12a75c839f95ec3144039ad59a913301c00fb3057",
     "metrics/source/templates/classic/style.css": "618ef6735e6750c944045a9c4bdb4b131a4a934a097d6eb7b7ab07297edab773",
     "metrics/source/templates/classic/partials/isocalendar.ejs": "e77eff2e89a1ffeb03ca9554240ddeff34660abd5b010078d0f9599f8c9f3ba9",
-    "metrics/source/templates/classic/partials/languages.ejs": "a0390d475b76937bc65671b4cba2d12b504ea70b3239a2471a0633179bb2ec6f"
+    "metrics/source/templates/classic/partials/languages.ejs": "a0390d475b76937bc65671b4cba2d12b504ea70b3239a2471a0633179bb2ec6f",
+    "metrics/source/plugins/activity/index.mjs": "3ef6f3bf18ad1e25e492277308dfa699fa8c2b9a314858c3a85f338c1a61458a",
+    "metrics/source/plugins/traffic/index.mjs": "546e8a7a32026bd5e583ca1028d9ac5ee5fc2141f3f50d09a5d4282a723c62da",
+    "metrics/source/templates/classic/partials/activity.ejs": "d388176bfe9d3248d25f692da3d818ac28752b9b67427f792162ad248eadc648"
   }
 }

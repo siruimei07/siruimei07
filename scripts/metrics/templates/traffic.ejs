@@ -1,0 +1,40 @@
+<% const traffic = plugins.traffic; if (traffic) { %>
+<section class="traffic-card" style="width:456px;margin:0 auto">
+  <h2 class="field">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 1a.75.75 0 0 1 .75.75v10.5h11.75a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 13V1.75A.75.75 0 0 1 1.75 1Zm3.5 7a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 5.25 8Zm4-4a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0v-5.5A.75.75 0 0 1 9.25 4Zm4 2a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z"/></svg>
+    Repositories traffic
+  </h2>
+  <% if (!traffic.available) { %>
+    <p style="margin:12px;font-size:13px"><%= traffic.message %></p>
+  <% } else { const number = value => new Intl.NumberFormat('en-US').format(value); %>
+    <div style="display:flex;align-items:baseline;gap:10px;margin:12px 12px 2px">
+      <strong style="font-size:28px;line-height:32px;font-weight:600"><%= number(traffic.totalViews) %></strong>
+      <span style="font-size:13px">page views</span>
+    </div>
+    <div style="margin:0 12px 2px;font-size:12px;line-height:18px">Latest 14-day repository snapshots</div>
+    <div style="margin:0 12px 4px;font-size:11px;line-height:16px"><%= traffic.periodLabel %></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="456" height="108" viewBox="0 0 456 108" role="img" aria-label="Daily repository page views">
+      <line x1="12" y1="87" x2="444" y2="87" stroke="currentColor" opacity="0.2"/>
+      <% const step = 432 / traffic.days.length; for (let i=0; i<traffic.days.length; i++) { const day=traffic.days[i]; const height = day.count ? Math.max(2, 72 * day.count / traffic.maxDayCount) : 0; %>
+        <rect x="<%= 12+i*step+2 %>" y="<%= 87-height %>" width="<%= Math.max(1,step-4) %>" height="<%= height %>" rx="2" fill="#2ea043"><title><%= day.date %>: <%= number(day.count) %> views</title></rect>
+      <% } %>
+      <text x="12" y="104" fill="currentColor" style="font-size:10px"><%= traffic.period.start.slice(5) %></text>
+      <text x="228" y="104" fill="currentColor" text-anchor="middle" style="font-size:10px">Daily reported views · UTC</text>
+      <text x="444" y="104" fill="currentColor" text-anchor="end" style="font-size:10px"><%= traffic.period.end.slice(5) %></text>
+    </svg>
+    <div style="margin:6px 12px 8px">
+      <% for (const repo of traffic.repositories) { %>
+        <div style="margin-bottom:4px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
+            <span style="overflow-wrap:anywhere"><%= repo.name %></span>
+            <span style="white-space:nowrap;font-variant-numeric:tabular-nums"><%= number(repo.count) %></span>
+          </div>
+          <div style="font-size:11px;line-height:16px"><%= repo.periodLabel %></div>
+        </div>
+      <% } %>
+    </div>
+    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Snapshot captured <%= traffic.capturedLabel %> (UTC)</div>
+    <div style="margin:0 12px 8px;font-size:11px;line-height:16px"><%= traffic.repositoryCount %> public repositories<%= traffic.complete ? '' : ' · partial snapshot coverage' %></div>
+  <% } %>
+</section>
+<% } %>

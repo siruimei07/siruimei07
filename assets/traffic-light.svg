@@ -1,5 +1,5 @@
-<!-- Generated from lowlighter/metrics @ 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d, MIT license. Data: public GitHub pages/API only; calendar fetched anonymously. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="166" class=" no-animations" viewBox="0 0 480 166" preserveAspectRatio="xMinYMin meet" role="img" aria-label="7 Languages">
+<!-- Generated from lowlighter/metrics @ 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d, MIT license. Data: authenticated analytics for selected public repositories; capture date shown in card. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="420" class=" no-animations" viewBox="0 0 480 420" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Repositories traffic">
 
   <defs><style></style></defs>
   <style data-optimizable="true">/* SVG global context */
@@ -1672,7 +1672,7 @@
     caret-color: transparent !important;
   }
 </style>
-  <style>svg { color: #b1bac4; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: #58a6ff; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: #b1bac4; } .field.language.details small { color: #b1bac4; font-size: 12px; line-height: 20px; } .activity .details, .activity .timestamp { color: #b1bac4; } .activity .repo, .activity .issue, .activity .commit .sha { color: #58a6ff; } .activity .field { white-space: normal; align-items: flex-start; } .activity .field svg { margin-top: 2px; } .activity .content { overflow-wrap: anywhere; } .activity .timestamp { font-size: 11px; line-height: 16px; }</style>
+  <style>svg { color: #59636e; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: #0969da; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: #59636e; } .field.language.details small { color: #59636e; font-size: 12px; line-height: 20px; } .activity .details, .activity .timestamp { color: #59636e; } .activity .repo, .activity .issue, .activity .commit .sha { color: #0969da; } .activity .field { white-space: normal; align-items: flex-start; } .activity .field svg { margin-top: 2px; } .activity .content { overflow-wrap: anywhere; } .activity .timestamp { font-size: 11px; line-height: 16px; }</style>
 
   <foreignObject x="0" y="0" width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" class="items-wrapper">
@@ -1680,129 +1680,88 @@
 
 
 
-  <section>
-    <h2 class="field">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25h-6.5a.75.75 0 00-.53.22L4.5 14.44v-2.19a.75.75 0 00-.75-.75h-2a.25.25 0 01-.25-.25v-8.5zM1.75 1A1.75 1.75 0 000 2.75v8.5C0 12.216.784 13 1.75 13H3v1.543a1.457 1.457 0 002.487 1.03L8.061 13h6.189A1.75 1.75 0 0016 11.25v-8.5A1.75 1.75 0 0014.25 1H1.75zm5.03 3.47a.75.75 0 010 1.06L5.31 7l1.47 1.47a.75.75 0 01-1.06 1.06l-2-2a.75.75 0 010-1.06l2-2a.75.75 0 011.06 0zm2.44 0a.75.75 0 000 1.06L10.69 7 9.22 8.47a.75.75 0 001.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0z"></path></svg>
-      7 Languages
-    </h2>
-  </section>
+<section class="traffic-card" style="width:456px;margin:0 auto">
+  <h2 class="field">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 1a.75.75 0 0 1 .75.75v10.5h11.75a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 13V1.75A.75.75 0 0 1 1.75 1Zm3.5 7a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 5.25 8Zm4-4a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0v-5.5A.75.75 0 0 1 9.25 4Zm4 2a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z"></path></svg>
+    Repositories traffic
+  </h2>
 
-    <section class="column">
-      <h3 class="field">
-        Most used languages
-      </h3>
+    <div style="display:flex;align-items:baseline;gap:10px;margin:12px 12px 2px">
+      <strong style="font-size:28px;line-height:32px;font-weight:600">41</strong>
+      <span style="font-size:13px">page views</span>
+    </div>
+    <div style="margin:0 12px 2px;font-size:12px;line-height:18px">Latest 14-day repository snapshots</div>
+    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Sep 22, 2026 – Oct 7, 2026</div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="456" height="108" viewBox="0 0 456 108" role="img" aria-label="Daily repository page views">
+      <line x1="12" y1="87" x2="444" y2="87" stroke="currentColor" opacity="0.2"></line>
 
+        <rect x="14" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-22: 0 views</title></rect>
 
+        <rect x="41" y="65.4" width="23" height="21.6" rx="2" fill="#2ea043"><title>2026-09-23: 6 views</title></rect>
 
-          <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="460" height="8">
-            <mask id="languages-bar">
-              <rect x="0" y="0" width="460" height="8" fill="white" rx="5"></rect>
-            </mask>
-            <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"></rect>
+        <rect x="68" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-24: 0 views</title></rect>
 
-              <rect mask="url(#languages-bar)" x="0" y="0" width="302.49645380559843" height="8" fill="#7355dd"></rect>
+        <rect x="95" y="83.4" width="23" height="3.6" rx="2" fill="#2ea043"><title>2026-09-25: 1 views</title></rect>
 
-              <rect mask="url(#languages-bar)" x="302.49645380559843" y="0" width="129.58429518967188" height="8" fill="#3178c6"></rect>
+        <rect x="122" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-26: 0 views</title></rect>
 
-              <rect mask="url(#languages-bar)" x="432.08074899527037" y="0" width="14.920569512420368" height="8" fill="#012456"></rect>
+        <rect x="149" y="15" width="23" height="72" rx="2" fill="#2ea043"><title>2026-09-27: 20 views</title></rect>
 
-              <rect mask="url(#languages-bar)" x="447.0013185076907" y="0" width="9.801516741024486" height="8" fill="#663399"></rect>
+        <rect x="176" y="83.4" width="23" height="3.6" rx="2" fill="#2ea043"><title>2026-09-28: 1 views</title></rect>
 
-              <rect mask="url(#languages-bar)" x="456.8028352487152" y="0" width="2.9557370323884737" height="8" fill="#f1e05a"></rect>
+        <rect x="203" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-29: 0 views</title></rect>
 
-              <rect mask="url(#languages-bar)" x="459.7585722811037" y="0" width="0.2414277188963548" height="8" fill="#ededed"></rect>
+        <rect x="230" y="79.8" width="23" height="7.2" rx="2" fill="#2ea043"><title>2026-09-30: 2 views</title></rect>
 
-          </svg>
+        <rect x="257" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-01: 0 views</title></rect>
 
+        <rect x="284" y="72.6" width="23" height="14.4" rx="2" fill="#2ea043"><title>2026-10-02: 4 views</title></rect>
 
-          <div class="row fill-width">
+        <rect x="311" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-03: 0 views</title></rect>
 
-              <section>
+        <rect x="338" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-04: 0 views</title></rect>
 
-                  <div class="field language details">
-                    <div class="field">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#7355dd" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                      C#
-                    </div>
-                    <small>
+        <rect x="365" y="69" width="23" height="18" rx="2" fill="#2ea043"><title>2026-10-05: 5 views</title></rect>
 
+        <rect x="392" y="79.8" width="23" height="7.2" rx="2" fill="#2ea043"><title>2026-10-06: 2 views</title></rect>
 
-                       <div>65.8%</div>
-                    </small>
-                  </div>
+        <rect x="419" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-07: 0 views</title></rect>
 
-                  <div class="field language details">
-                    <div class="field">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#012456" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                      PowerShell
-                    </div>
-                    <small>
+      <text x="12" y="104" fill="currentColor" style="font-size:10px">09-22</text>
+      <text x="228" y="104" fill="currentColor" text-anchor="middle" style="font-size:10px">Daily reported views · UTC</text>
+      <text x="444" y="104" fill="currentColor" text-anchor="end" style="font-size:10px">10-07</text>
+    </svg>
+    <div style="margin:6px 12px 8px">
 
-
-                       <div>3.2%</div>
-                    </small>
-                  </div>
-
-                  <div class="field language details">
-                    <div class="field">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                      JavaScript
-                    </div>
-                    <small>
-
-
-                       <div>0.6%</div>
-                    </small>
-                  </div>
-
-              </section>
-
-              <section>
-
-                  <div class="field language details">
-                    <div class="field">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                      TypeScript
-                    </div>
-                    <small>
-
-
-                       <div>28.2%</div>
-                    </small>
-                  </div>
-
-                  <div class="field language details">
-                    <div class="field">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#663399" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                      CSS
-                    </div>
-                    <small>
-
-
-                       <div>2.1%</div>
-                    </small>
-                  </div>
-
-                  <div class="field language details">
-                    <div class="field">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#ededed" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                      Other
-                    </div>
-                    <small>
-
-
-                       <div>0.1%</div>
-                    </small>
-                  </div>
-
-              </section>
-
+        <div style="margin-bottom:4px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
+            <span style="overflow-wrap:anywhere">siruimei07.github.io</span>
+            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">30</span>
           </div>
+          <div style="font-size:11px;line-height:16px">Sep 22, 2026 – Oct 5, 2026</div>
+        </div>
 
+        <div style="margin-bottom:4px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
+            <span style="overflow-wrap:anywhere">GUI-for-RePKG</span>
+            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">11</span>
+          </div>
+          <div style="font-size:11px;line-height:16px">Sep 23, 2026 – Oct 6, 2026</div>
+        </div>
 
+        <div style="margin-bottom:4px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
+            <span style="overflow-wrap:anywhere">Stronghold-Protocol</span>
+            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">0</span>
+          </div>
+          <div style="font-size:11px;line-height:16px">Sep 24, 2026 – Oct 7, 2026</div>
+        </div>
 
+    </div>
+    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Snapshot captured Oct 7, 2026 (UTC)</div>
+    <div style="margin:0 12px 8px;font-size:11px;line-height:16px">3 public repositories</div>
 
-    </section>
+</section>
 
 
 

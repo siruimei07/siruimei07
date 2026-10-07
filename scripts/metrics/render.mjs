@@ -5,6 +5,8 @@ import {createHash} from 'node:crypto';
 import ejs from 'ejs';
 import {JSDOM} from 'jsdom';
 import puppeteer from 'puppeteer-core';
+import {loadActivity,activityTemplate} from './activity.mjs';
+import {loadTraffic} from './traffic.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const upstream = path.join(root, 'vendor/metrics');
@@ -20,23 +22,30 @@ for(const [relative,expected] of Object.entries(provenance.sha256)) {
   if(actual!==expected) throw new Error(`Vendored file hash mismatch: ${relative}`);
 }
 
-// Only public source endpoints are used. A repository-scoped Actions token is optional
-// for API rate limits; calendar pages are always fetched anonymously. No PAT is needed.
+// Public chart endpoints use an optional Actions token for API rate limits.
+// Calendar pages are anonymous. Traffic authentication is isolated in traffic.mjs.
 async function publicFetch(url,kind='json') {
   const parsed=new URL(url);
   const headers={'User-Agent':'public-github-profile-metrics','Accept-Language':'en-US'};
+  const calendarPage=parsed.hostname==='github.com'&&parsed.pathname===`/users/${login}/contributions`;
+  const enrichment=parsed.hostname==='api.github.com'&&/^\/repos\/[a-z\d-]+\/[a-z\d_.-]+(?:\/pulls\/\d+)?$/i.test(parsed.pathname);
   const publicApi=parsed.hostname==='api.github.com'&&(
-    parsed.pathname===`/users/${login}/repos`||parsed.pathname.startsWith(`/repos/${login}/`)&&parsed.pathname.endsWith('/languages')
+    parsed.pathname===`/users/${login}/repos`||
+    parsed.pathname===`/users/${login}/events/public`||
+    parsed.pathname.startsWith(`/repos/${login}/`)&&parsed.pathname.endsWith('/languages')
   );
+  if(parsed.protocol!=='https:'||(!calendarPage&&!enrichment&&!publicApi)) throw new Error('Source endpoint is outside the public allowlist');
   if(publicApi&&(process.env.GITHUB_TOKEN||process.env.GH_TOKEN)) headers.Authorization=`Bearer ${process.env.GITHUB_TOKEN||process.env.GH_TOKEN}`;
   for(let attempt=0;attempt<3;attempt++) {
-    const response=await fetch(url,{headers,signal:AbortSignal.timeout(30000)});
+    const response=await fetch(url,{headers,redirect:'error',signal:AbortSignal.timeout(30000)});
     if(response.ok) return kind==='json'?response.json():response.text();
     if((response.status===429||response.status>=500)&&attempt<2) {
       await new Promise(resolve=>setTimeout(resolve,1000*2**attempt));
       continue;
     }
-    throw new Error(`Public source ${new URL(url).pathname} returned HTTP ${response.status}; existing charts will be kept.`);
+    const error=new Error(`Public source ${new URL(url).pathname} returned HTTP ${response.status}; existing charts will be kept.`);
+    error.status=response.status;
+    throw error;
   }
 }
 const publicRepos=[];
@@ -102,11 +111,19 @@ const languages=(await import(`data:text/javascript;base64,${Buffer.from(localLa
 const languageInputs={ignored:[],skipped:[],other:true,colors:'github',aliases:'',details:['percentage'],threshold:'0%',limit:6,indepth:false,sections:['most-used'],categories:['programming','markup']};
 const lang=await languages({login,data:{shared:{'repositories.skipped':[]},user:{repositories:{nodes:repositories},repositoriesContributedTo:{nodes:[]}}},account:'user',q:{languages:true},imports:{metadata:{plugins:{languages:{enabled:()=>true,inputs:()=>({...languageInputs,skipped:[]}),extras:()=>false}}},fs,__module:()=>path.join(upstream,'source/plugins/languages'),filters:{repo:()=>true,text:()=>true},format:{error:e=>e}}},{enabled:true});
 
+const activity=await loadActivity({login,upstream,now,publicFetch});
+const traffic=await loadTraffic({login,publicRepos,upstream,now,snapshotPath:path.join(output,'traffic-snapshot.json')});
+
 const css=await fs.readFile(path.join(upstream,'source/templates/classic/style.css'),'utf8');
 const image=await fs.readFile(path.join(upstream,'source/templates/classic/image.svg'),'utf8');
+const activityPartial=activityTemplate(await fs.readFile(path.join(upstream,'source/templates/classic/partials/activity.ejs'),'utf8'));
 const f=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
 f.percentage=n=>`${(n*100).toFixed(1)}%`;
 f.bytes=n=>`${f(n)} B`;
+f.date=(timestamp,{time=true,date=true,timeZone='America/Toronto'}={})=>new Intl.DateTimeFormat('en-US',{
+  ...(date?{year:'numeric',month:'short',day:'numeric'}:{}),
+  ...(time?{hour:'2-digit',minute:'2-digit',hour12:false,timeZoneName:'short'}:{}),timeZone,
+}).format(new Date(timestamp));
 const browserCandidates=[process.env.PUPPETEER_EXECUTABLE_PATH,process.env.PUPPETEER_BROWSER_PATH,'C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','/usr/bin/google-chrome','/usr/bin/google-chrome-stable','/usr/bin/chromium','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].filter(Boolean);
 let executablePath;
 for(const candidate of browserCandidates) {
@@ -118,11 +135,16 @@ const generated=[];
 try {
  for(const mode of ['light','dark']) {
   const color=mode==='dark'?'#b1bac4':'#59636e', accent=mode==='dark'?'#58a6ff':'#0969da';
-  const extrasCss=`svg { color: ${color}; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: ${accent}; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: ${color}; } .field.language.details small { color: ${color}; font-size: 12px; line-height: 20px; }`;
-  for(const [name,data] of [['isocalendar',iso],['languages',lang]]) {
+  const extrasCss=`svg { color: ${color}; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: ${accent}; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: ${color}; } .field.language.details small { color: ${color}; font-size: 12px; line-height: 20px; } .activity .details, .activity .timestamp { color: ${color}; } .activity .repo, .activity .issue, .activity .commit .sha { color: ${accent}; } .activity .field { white-space: normal; align-items: flex-start; } .activity .field svg { margin-top: 2px; } .activity .content { overflow-wrap: anywhere; } .activity .timestamp { font-size: 11px; line-height: 16px; }`;
+  for(const [name,data] of [['isocalendar',iso],['languages',lang],['activity',activity],['traffic',traffic]]) {
     const themedData=name==='isocalendar'&&mode==='dark'?{...data,svg:data.svg.replaceAll('#ebedf0','#161b22').replaceAll('#9be9a8','#0e4429').replaceAll('#40c463','#006d32').replaceAll('#30a14e','#26a641').replaceAll('#216e39','#39d353')}:data;
-    const context={large:false,columns:false,animated:false,fonts:'',style:css,extras:{css:extrasCss},warnings:[],partials:[name],base:{metadata:false},plugins:{[name]:themedData},s:n=>n===1?'':'s',f};
-    const markup=(await ejs.render(image,context,{async:true,filename:path.join(upstream,'source/templates/classic/image.svg')})).replaceAll('Commits streaks','Contribution streaks').replaceAll('Commits per day','Contributions per day');
+    const context={large:false,columns:false,animated:false,fonts:'',style:css,extras:{css:extrasCss},warnings:[],partials:[name],base:{metadata:false},plugins:{[name]:themedData},account:'user',user:{login},config:{timezone:{name:'America/Toronto'}},s:n=>n===1?'':'s',f};
+    const markup=(await ejs.render(image,context,{
+      async:true,filename:path.join(upstream,'source/templates/classic/image.svg'),
+      includer:(originalPath,parsedPath)=>originalPath==='partials/activity.ejs'
+        ?{filename:parsedPath,template:activityPartial}
+        :{filename:originalPath==='partials/traffic.ejs'?path.join(root,'templates/traffic.ejs'):parsedPath},
+    })).replaceAll('Commits streaks','Contribution streaks').replaceAll('Commits per day','Contributions per day');
     const page=await browser.newPage();
     await page.setViewport({width:500,height:800,deviceScaleFactor:2});
     // Generated markup is local; stop all external resource requests while rendering.
@@ -142,7 +164,8 @@ try {
       node.setAttribute('aria-label',document.querySelector('h2')?.textContent.trim()||'GitHub metrics');
       return node.outerHTML;
     });
-    const notice=`<!-- Generated from lowlighter/metrics @ ${revision}, MIT license. Data: public GitHub pages/API only; calendar fetched anonymously. -->\n`;
+    const dataNotice=name==='traffic'?'Data: authenticated analytics for selected public repositories; capture date shown in card.':'Data: public GitHub pages/API only; calendar fetched anonymously.';
+    const notice=`<!-- Generated from lowlighter/metrics @ ${revision}, MIT license. ${dataNotice} -->\n`;
     const assetName=name==='languages'?'languages-card':name;
     const out=path.join(output,`${assetName}-${mode}.svg`);
     generated.push({out,content:(notice+svg).replace(/[\t ]+$/gm,'')});
@@ -154,6 +177,6 @@ try {
   }
  }
 } finally {await browser.close();}
-// Do not overwrite any existing SVG until all source data and all four renders succeed.
+// Do not overwrite any existing SVG until all source data and all renders succeed.
 for(const {out,content} of generated) await fs.writeFile(out,content,'utf8');
 await fs.writeFile(path.join(output,'public-data-summary.json'),JSON.stringify({sourceRevision:revision,generatedAt:now.toISOString(),repositories:repositories.map(r=>r.name),calendar:{source:'anonymous public GitHub contribution pages',daysFetched:allDays.size,bestStreak:iso.streak.max,maxPerDay:iso.max,averagePerDay:iso.average},languages:lang.favorites.map(({name,value,size})=>({name,percentage:value*100,bytes:size}))},null,2));
