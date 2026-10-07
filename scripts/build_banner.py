@@ -122,8 +122,17 @@ def main() -> None:
         args.static_output.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(args.output_dir / f"{selected.stem}.png", args.static_output)
         if selection == "slideshow":
-            # The poster/default artwork leads, followed by filename order.
-            ordered = [selected] + [source for source in sources if source != selected]
+            # The poster leads; explicit order follows, then newly added files.
+            configured_order = config.get("order", [])
+            if not isinstance(configured_order, list) or not all(isinstance(name, str) for name in configured_order):
+                raise ValueError("order must be a list of source filenames")
+            by_name = {source.name: source for source in sources}
+            ordered = [selected]
+            seen = {selected.name}
+            for name in configured_order + [source.name for source in sources]:
+                if name in by_name and name not in seen:
+                    ordered.append(by_name[name])
+                    seen.add(name)
             frame_width = min(1600, max(banner.width for banner in banners.values()))
             frame_size = (frame_width, math.ceil(frame_width / 3))
             frames = []

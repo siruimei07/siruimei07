@@ -18,7 +18,7 @@ The workflow builds banners, refreshes the public repository table, and renders 
 
 The charts use [lowlighter/metrics](https://github.com/lowlighter/metrics) source pinned to `366f8b9dfe3a59656c67d5dcad9950f59c9bc96d`. The necessary plugins and templates are stored in `scripts/metrics/vendor/`, with licenses, provenance, and SHA-256 checks. The adapter supplies publicly available data to those renderers.
 
-- Calendar: rolling full year of contributions visible on the public GitHub profile, including any anonymous private-contribution counts the account has chosen to make public. This measures contributions, not only commits.
+- Calendar: rolling half year of contributions visible on the public GitHub profile, including any anonymous private-contribution counts the account has chosen to make public. This measures contributions, not only commits.
 - Languages: GitHub's language byte totals across owned, public, non-fork repositories, excluding this Profile repository. Percentages describe code volume, not proficiency.
 - Repository list: all owned public repositories, including labeled forks, excluding this Profile repository.
 

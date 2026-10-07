@@ -90,7 +90,7 @@ const calendarGraphql = async ({from,to}) => {
   return {user:{calendar:{contributionCalendar:{weeks}}}};
 };
 const isocalendar=(await import(pathToFileURL(path.join(upstream,'source/plugins/isocalendar/index.mjs')))).default;
-const iso=await isocalendar({login,data:{},graphql:calendarGraphql,q:{isocalendar:true},queries:{isocalendar:{calendar:x=>x}},account:'user',imports:{metadata:{plugins:{isocalendar:{enabled:()=>true,inputs:()=>({duration:'full-year'})}}},format:{error:e=>e}}},{enabled:true});
+const iso=await isocalendar({login,data:{},graphql:calendarGraphql,q:{isocalendar:true},queries:{isocalendar:{calendar:x=>x}},account:'user',imports:{metadata:{plugins:{isocalendar:{enabled:()=>true,inputs:()=>({duration:'half-year'})}}},format:{error:e=>e}}},{enabled:true});
 
 // Keep the official most-used-language computation unchanged; remove only imports of
 // unused indepth/recent analyzers, which otherwise load native image libraries on Windows.
@@ -140,7 +140,7 @@ try {
     });
     const notice=`<!-- Generated from lowlighter/metrics @ ${revision}, MIT license. Data: public GitHub pages/API only; calendar fetched anonymously. -->\n`;
     const out=path.join(output,`${name}-${mode}.svg`);
-    generated.push({out,content:notice+svg});
+    generated.push({out,content:(notice+svg).replace(/[\t ]+$/gm,'')});
     const h=await page.$eval('svg',node=>Number(node.getAttribute('height')));
     await page.setViewport({width:480,height:h,deviceScaleFactor:2});
     if(process.env.METRICS_SCREENSHOTS==='1') await page.screenshot({path:path.join(output,`${name}-${mode}.png`),omitBackground:false});

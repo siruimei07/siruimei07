@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+# Preserve the exact upstream bytes used by the renderer's integrity checks.
+scripts/metrics/vendor/** -text -whitespace

@@ -7,13 +7,13 @@
   "sha256": {
     "language-colors.json": "cb5d6890ad27828969214c93fb114724cab2a10d7ae241077369acfb484a0ef7",
     "LINGUIST-LICENSE": "7717070c5a8c85440ff2312930bb30dd19002ab5bc235c9800042767f6f5242f",
-    "metrics/LICENSE": "c1732c4ec27896bc3820f6b01cd1d5659595e595e9e562e91eda368950e752b6",
-    "metrics/source/plugins/isocalendar/index.mjs": "c4081423e57b98882a262e24db7621f19ee326065ed9ca0ff2a622cf3a2a5e5f",
-    "metrics/source/plugins/languages/colorsets.json": "6aea496b9f4638e2bab2592961c12c7ce9d64949cfe7d9f5981e0bca65acdcef",
-    "metrics/source/plugins/languages/index.mjs": "ae076c90d93b0ef5c1f07269fca31722a32017dfa22b84f7ec4784f45b0768cf",
-    "metrics/source/templates/classic/image.svg": "db72fcb9692657d7e45c8db7d15ff810f49ad21581403bacbfd4df8aee76cc66",
-    "metrics/source/templates/classic/style.css": "588692b97ffe82aa7cc6602453e5e6b1133b664efbbe2c743d7ca0af024a4e92",
-    "metrics/source/templates/classic/partials/isocalendar.ejs": "90802705750855b53f4fcaac6d559c1a2f5f347e4abf62e664f7c811678be4bc",
-    "metrics/source/templates/classic/partials/languages.ejs": "6ee8a767e36bb3bea69062482f1aa9bce417b7c494ace4f8311759b6661bb4f4"
+    "metrics/LICENSE": "78ee92b1fc51b272401b3f9e8fc4ed539bfd825be47bb31052d961c3711b2fcb",
+    "metrics/source/plugins/isocalendar/index.mjs": "e8b346f344e9aaa03408b4c8675b76b16156d6b3d6b4d7dbaa5b22cfea3f16b6",
+    "metrics/source/plugins/languages/colorsets.json": "93a45d6d51e6899c042a80201ea0a0431b7a327a4d5eb91ac2014ebd041ee15c",
+    "metrics/source/plugins/languages/index.mjs": "f5c062eea8ce2d0899d4b94e2df0b902dd5d4563404b2f01624c4440baed81b7",
+    "metrics/source/templates/classic/image.svg": "51ab9e90e9f7c94f0c0078e12a75c839f95ec3144039ad59a913301c00fb3057",
+    "metrics/source/templates/classic/style.css": "618ef6735e6750c944045a9c4bdb4b131a4a934a097d6eb7b7ab07297edab773",
+    "metrics/source/templates/classic/partials/isocalendar.ejs": "e77eff2e89a1ffeb03ca9554240ddeff34660abd5b010078d0f9599f8c9f3ba9",
+    "metrics/source/templates/classic/partials/languages.ejs": "a0390d475b76937bc65671b4cba2d12b504ea70b3239a2471a0633179bb2ec6f"
   }
 }

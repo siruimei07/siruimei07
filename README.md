@@ -1,13 +1,13 @@
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/banner-static.png" />
-  <img src="./assets/banner.png" width="100%" alt="Three landscapes—a monolith, a golden field, and a green meadow—rotate every 12 seconds and fade into the page." />
+  <img src="./assets/banner.png" width="100%" alt="A collection of illustrated landscapes rotates every 12 seconds, with each scene fading into the page." />
 </picture>
 
 ## Contributions
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/isocalendar-dark.svg" />
-  <img src="./assets/isocalendar-light.svg" width="720" alt="Full-year isometric contribution calendar with streak and daily contribution statistics." />
+  <img src="./assets/isocalendar-light.svg" width="720" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
 </picture>
 
 ## Languages
