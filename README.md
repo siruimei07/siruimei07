@@ -5,12 +5,12 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/isocalendar-dark.svg" />
-    <img src="./assets/isocalendar-light.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.d01338f26a53df5e.svg" />
+    <img src="./assets/metrics/isocalendar-light.5946c15616a25c3b.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/languages-card-dark.svg" />
-    <img src="./assets/languages-card-light.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.6cb51429761d2f3b.svg" />
+    <img src="./assets/metrics/languages-card-light.d74277183fde7a33.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
   </picture>
 </p>
 
@@ -27,11 +27,11 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-dark.svg" />
-    <img src="./assets/activity-light.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.5e6f210e341a874c.svg" />
+    <img src="./assets/metrics/activity-light.f17df42d4c270cdc.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/traffic-dark.svg" />
-    <img src="./assets/traffic-light.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.1614cd13a8c428eb.svg" />
+    <img src="./assets/metrics/traffic-light.3d4c68826e7e0424.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>

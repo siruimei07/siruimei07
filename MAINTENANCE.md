@@ -18,13 +18,17 @@ The workflow builds banners, refreshes the public repository table, and renders 
 
 The charts use [lowlighter/metrics](https://github.com/lowlighter/metrics) source pinned to `366f8b9dfe3a59656c67d5dcad9950f59c9bc96d`. The necessary plugins and templates are stored in `scripts/metrics/vendor/`, with licenses, provenance, and SHA-256 checks. The adapter supplies public data and authenticated traffic counts for the selected public repositories.
 
-- Calendar: rolling half year of contributions visible on the public GitHub profile, including any anonymous private-contribution counts the account has chosen to make public. This measures contributions, not only commits.
+- Calendar: rolling half year of contributions visible on the public GitHub profile, including any anonymous private-contribution counts the account has chosen to make public. This measures contributions, not only commits. The pinned Metrics plugin ends at the previous UTC day and aligns the start to a Sunday; GitHub's native calendar can show a different range and the current incomplete day.
 - Languages: GitHub's language byte totals across owned, public, non-fork repositories, excluding this Profile repository. Percentages describe code volume, not proficiency.
 - Repository list: all owned public repositories, including labeled forks, excluding this Profile repository.
 - Recent activity: five recent public events within the last 30 days, with timestamps. The adapter handles the reduced event payloads introduced by GitHub in 2025 before calling the pinned Metrics plugin.
 - Repositories traffic: page views for the public repositories in the table, summed using the Metrics traffic plugin. The standalone card adds a daily chart and repository breakdown. It displays its actual measurement period and acquisition date; unique visitors are not summed across repositories.
 
 Calendar pages are fetched anonymously. Language, activity, and repository requests use public REST endpoints. If source parsing or rendering fails, the workflow keeps the last published charts. If the traffic credential is missing or unavailable, the last successful, explicitly dated traffic snapshot is retained.
+
+### Image updates and caching
+
+The renderer writes canonical SVGs in `assets/`. After all charts render successfully, `scripts/metrics/publish.mjs` copies them to content-hashed filenames under `assets/metrics/` and updates every light/dark README image reference. Changed image bytes therefore get a new URL, avoiding stale browser or GitHub image caches. Unchanged charts keep the same URL. The current and previous version of each chart are retained so recently cached README pages can still load their images. The workflow commits the README and its matching images together.
 
 ### Enable daily traffic refresh
 
@@ -41,6 +45,7 @@ python scripts/build_banner.py
 python scripts/update_repositories.py
 $env:METRICS_OUTPUT_DIR = 'assets'
 node scripts/metrics/render.mjs
+node scripts/metrics/publish.mjs
 ```
 
 Set `PUPPETEER_EXECUTABLE_PATH` if Chrome is installed in a nonstandard location. The renderer can also use `GITHUB_TOKEN` to increase the API rate limit; a local token is optional.

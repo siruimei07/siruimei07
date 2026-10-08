@@ -52,7 +52,7 @@ jobs:
           npm ci --prefix scripts/metrics --ignore-scripts
 
       - name: Check Metrics adapters
-        run: node --test scripts/metrics/activity.test.mjs scripts/metrics/traffic.test.mjs
+        run: node --test scripts/metrics/activity.test.mjs scripts/metrics/traffic.test.mjs scripts/metrics/publish.test.mjs
 
       - name: Build banner
         env:
@@ -75,6 +75,9 @@ jobs:
           TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
           METRICS_OUTPUT_DIR: assets
         run: node scripts/metrics/render.mjs
+
+      - name: Publish versioned chart images
+        run: node scripts/metrics/publish.mjs
 
       - name: Commit updated profile
         run: |
