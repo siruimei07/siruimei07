@@ -1,5 +1,5 @@
 <!-- Generated from lowlighter/metrics @ 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d, MIT license. Data: authenticated analytics for selected public repositories; capture date shown in card. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="420" class=" no-animations" viewBox="0 0 480 420" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Repositories traffic">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="460" class=" no-animations" viewBox="0 0 480 460" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Repositories traffic">
 
   <defs><style></style></defs>
   <style data-optimizable="true">/* SVG global context */
@@ -1691,43 +1691,45 @@
       <span style="font-size:13px">page views</span>
     </div>
     <div style="margin:0 12px 2px;font-size:12px;line-height:18px">Latest 14-day repository snapshots</div>
-    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Sep 23, 2026 – Oct 7, 2026</div>
+    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Sep 23, 2026 – Oct 8, 2026</div>
     <svg xmlns="http://www.w3.org/2000/svg" width="456" height="108" viewBox="0 0 456 108" role="img" aria-label="Daily repository page views">
       <line x1="12" y1="87" x2="444" y2="87" stroke="currentColor" opacity="0.2"></line>
 
-        <rect x="14" y="65.4" width="24.8" height="21.6" rx="2" fill="#2ea043"><title>2026-09-23: 6 views</title></rect>
+        <rect x="14" y="65.4" width="23" height="21.6" rx="2" fill="#2ea043"><title>2026-09-23: 6 views</title></rect>
 
-        <rect x="42.8" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-09-24: 0 views</title></rect>
+        <rect x="41" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-24: 0 views</title></rect>
 
-        <rect x="71.6" y="83.4" width="24.8" height="3.6" rx="2" fill="#2ea043"><title>2026-09-25: 1 views</title></rect>
+        <rect x="68" y="83.4" width="23" height="3.6" rx="2" fill="#2ea043"><title>2026-09-25: 1 views</title></rect>
 
-        <rect x="100.4" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-09-26: 0 views</title></rect>
+        <rect x="95" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-26: 0 views</title></rect>
 
-        <rect x="129.2" y="15" width="24.8" height="72" rx="2" fill="#2ea043"><title>2026-09-27: 20 views</title></rect>
+        <rect x="122" y="15" width="23" height="72" rx="2" fill="#2ea043"><title>2026-09-27: 20 views</title></rect>
 
-        <rect x="158" y="83.4" width="24.8" height="3.6" rx="2" fill="#2ea043"><title>2026-09-28: 1 views</title></rect>
+        <rect x="149" y="83.4" width="23" height="3.6" rx="2" fill="#2ea043"><title>2026-09-28: 1 views</title></rect>
 
-        <rect x="186.8" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-09-29: 0 views</title></rect>
+        <rect x="176" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-29: 0 views</title></rect>
 
-        <rect x="215.6" y="79.8" width="24.8" height="7.2" rx="2" fill="#2ea043"><title>2026-09-30: 2 views</title></rect>
+        <rect x="203" y="79.8" width="23" height="7.2" rx="2" fill="#2ea043"><title>2026-09-30: 2 views</title></rect>
 
-        <rect x="244.4" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-10-01: 0 views</title></rect>
+        <rect x="230" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-01: 0 views</title></rect>
 
-        <rect x="273.2" y="72.6" width="24.8" height="14.4" rx="2" fill="#2ea043"><title>2026-10-02: 4 views</title></rect>
+        <rect x="257" y="72.6" width="23" height="14.4" rx="2" fill="#2ea043"><title>2026-10-02: 4 views</title></rect>
 
-        <rect x="302" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-10-03: 0 views</title></rect>
+        <rect x="284" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-03: 0 views</title></rect>
 
-        <rect x="330.8" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-10-04: 0 views</title></rect>
+        <rect x="311" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-04: 0 views</title></rect>
 
-        <rect x="359.6" y="69" width="24.8" height="18" rx="2" fill="#2ea043"><title>2026-10-05: 5 views</title></rect>
+        <rect x="338" y="69" width="23" height="18" rx="2" fill="#2ea043"><title>2026-10-05: 5 views</title></rect>
 
-        <rect x="388.40000000000003" y="79.8" width="24.8" height="7.2" rx="2" fill="#2ea043"><title>2026-10-06: 2 views</title></rect>
+        <rect x="365" y="79.8" width="23" height="7.2" rx="2" fill="#2ea043"><title>2026-10-06: 2 views</title></rect>
 
-        <rect x="417.2" y="87" width="24.8" height="0" rx="2" fill="#2ea043"><title>2026-10-07: 0 views</title></rect>
+        <rect x="392" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-07: 0 views</title></rect>
+
+        <rect x="419" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-08: 0 views</title></rect>
 
       <text x="12" y="104" fill="currentColor" style="font-size:10px">09-23</text>
       <text x="228" y="104" fill="currentColor" text-anchor="middle" style="font-size:10px">Daily reported views · UTC</text>
-      <text x="444" y="104" fill="currentColor" text-anchor="end" style="font-size:10px">10-07</text>
+      <text x="444" y="104" fill="currentColor" text-anchor="end" style="font-size:10px">10-08</text>
     </svg>
     <div style="margin:6px 12px 8px">
 
@@ -1749,15 +1751,23 @@
 
         <div style="margin-bottom:4px">
           <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
+            <span style="overflow-wrap:anywhere">Folio</span>
+            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">0</span>
+          </div>
+          <div style="font-size:11px;line-height:16px">Sep 25, 2026 – Oct 8, 2026</div>
+        </div>
+
+        <div style="margin-bottom:4px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
             <span style="overflow-wrap:anywhere">Stronghold-Protocol</span>
             <span style="white-space:nowrap;font-variant-numeric:tabular-nums">0</span>
           </div>
-          <div style="font-size:11px;line-height:16px">Sep 24, 2026 – Oct 7, 2026</div>
+          <div style="font-size:11px;line-height:16px">Sep 25, 2026 – Oct 8, 2026</div>
         </div>
 
     </div>
-    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Snapshot captured Oct 7, 2026 (UTC)</div>
-    <div style="margin:0 12px 8px;font-size:11px;line-height:16px">3 public repositories</div>
+    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Snapshot captured Oct 8, 2026 (UTC)</div>
+    <div style="margin:0 12px 8px;font-size:11px;line-height:16px">4 public repositories</div>
 
 </section>
 

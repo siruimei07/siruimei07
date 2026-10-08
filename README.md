@@ -19,6 +19,7 @@
 <!-- PUBLIC-REPOS:START -->
 | Repository | Description | Language |
 | :--- | :--- | :--- |
+| [Folio](https://github.com/siruimei07/Folio) | 给学生用的 Windows 桌面资料库：按「学期 → 课程」整理资料，多标签、Ctrl+K 搜索、应用内预览，像 Git 一样记录每次改动并备份到 iCloud Drive。Tauri 2 + React + Rust，开发中。 | Rust |
 | [Stronghold-Protocol](https://github.com/siruimei07/Stronghold-Protocol) · fork | 明日方舟「卫戍协议：盟约」非官方同人复刻：浏览器自走棋塔防，单人或 1–4 人联机合作（非商业） | JavaScript |
 | [siruimei07.github.io](https://github.com/siruimei07/siruimei07.github.io) | personal website | TypeScript |
 | [GUI-for-RePKG](https://github.com/siruimei07/GUI-for-RePKG) | An extensible C# WPF frontend with an Endfield-inspired maximal UI, rich motion, responsive navigation, and backend extension points. | C# |

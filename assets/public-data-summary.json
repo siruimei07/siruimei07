@@ -1,47 +1,48 @@
 {
   "sourceRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
-  "generatedAt": "2026-10-07T17:25:57.345Z",
+  "generatedAt": "2026-10-08T01:09:40.696Z",
   "repositories": [
+    "Folio",
     "siruimei07.github.io",
     "GUI-for-RePKG"
   ],
   "calendar": {
     "source": "anonymous public GitHub contribution pages",
     "daysFetched": 730,
-    "bestStreak": 15,
-    "maxPerDay": 190,
-    "averagePerDay": "4.55"
+    "bestStreak": 26,
+    "maxPerDay": 257,
+    "averagePerDay": "12.80"
   },
   "languages": [
     {
+      "name": "TypeScript",
+      "percentage": 42.198189651089336,
+      "bytes": 4641792
+    },
+    {
+      "name": "Rust",
+      "percentage": 34.19993801806349,
+      "bytes": 3761986
+    },
+    {
       "name": "C#",
-      "percentage": 65.76009865339097,
+      "percentage": 19.61437380925909,
       "bytes": 2157577
     },
     {
-      "name": "TypeScript",
-      "percentage": 28.170498954276496,
-      "bytes": 924269
+      "name": "CSS",
+      "percentage": 2.651123243053464,
+      "bytes": 291623
     },
     {
       "name": "PowerShell",
-      "percentage": 3.2436020679174713,
+      "percentage": 0.9674745742696419,
       "bytes": 106422
     },
     {
-      "name": "CSS",
-      "percentage": 2.130764508918366,
-      "bytes": 69910
-    },
-    {
-      "name": "JavaScript",
-      "percentage": 0.642551528780103,
-      "bytes": 21082
-    },
-    {
       "name": "Other",
-      "percentage": 0.052484286716598876,
-      "bytes": 1722
+      "percentage": 0.3689007042649809,
+      "bytes": 40579
     }
   ]
 }
