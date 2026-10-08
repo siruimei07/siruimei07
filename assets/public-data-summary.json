@@ -1,48 +1,49 @@
 {
   "sourceRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
-  "generatedAt": "2026-10-08T01:21:39.356Z",
+  "generatedAt": "2026-10-08T17:24:31.301Z",
   "repositories": [
+    "UofT-Courses-Programs",
+    "GUI-for-RePKG",
     "Folio",
-    "siruimei07.github.io",
-    "GUI-for-RePKG"
+    "siruimei07.github.io"
   ],
   "calendar": {
     "source": "anonymous public GitHub contribution pages",
     "daysFetched": 730,
     "bestStreak": 26,
     "maxPerDay": 257,
-    "averagePerDay": "12.81"
+    "averagePerDay": "12.89"
   },
   "languages": [
     {
       "name": "TypeScript",
-      "percentage": 42.198189651089336,
-      "bytes": 4641792
+      "percentage": 46.90718906627503,
+      "bytes": 6020814
     },
     {
       "name": "Rust",
-      "percentage": 34.19993801806349,
-      "bytes": 3761986
+      "percentage": 29.52583632897563,
+      "bytes": 3789815
     },
     {
       "name": "C#",
-      "percentage": 19.61437380925909,
-      "bytes": 2157577
+      "percentage": 17.86802304124883,
+      "bytes": 2293466
     },
     {
       "name": "CSS",
-      "percentage": 2.651123243053464,
-      "bytes": 291623
+      "percentage": 2.805403008775055,
+      "bytes": 360090
     },
     {
-      "name": "PowerShell",
-      "percentage": 0.9674745742696419,
-      "bytes": 106422
+      "name": "Python",
+      "percentage": 1.6780219435196937,
+      "bytes": 215384
     },
     {
       "name": "Other",
-      "percentage": 0.3689007042649809,
-      "bytes": 40579
+      "percentage": 1.2155266112057654,
+      "bytes": 156020
     }
   ]
 }
