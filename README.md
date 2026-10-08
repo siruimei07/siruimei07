@@ -5,8 +5,8 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.d01338f26a53df5e.svg" />
-    <img src="./assets/metrics/isocalendar-light.5946c15616a25c3b.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.636bd66c46acb6b1.svg" />
+    <img src="./assets/metrics/isocalendar-light.e1ffd8fe785fdf90.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.6cb51429761d2f3b.svg" />
