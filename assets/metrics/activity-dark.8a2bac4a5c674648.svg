@@ -1,5 +1,5 @@
-<!-- Generated from lowlighter/metrics @ 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d, MIT license. Data: authenticated analytics for selected public repositories; capture date shown in card. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="460" class=" no-animations" viewBox="0 0 480 460" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Repositories traffic">
+<!-- Generated from lowlighter/metrics @ 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d, MIT license. Data: public GitHub pages/API only; calendar fetched anonymously. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="389" class=" no-animations" viewBox="0 0 480 389" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Recent activity">
 
   <defs><style></style></defs>
   <style data-optimizable="true">/* SVG global context */
@@ -1680,96 +1680,180 @@
 
 
 
-<section class="traffic-card" style="width:456px;margin:0 auto">
-  <h2 class="field">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 1a.75.75 0 0 1 .75.75v10.5h11.75a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 13V1.75A.75.75 0 0 1 1.75 1Zm3.5 7a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 5.25 8Zm4-4a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0v-5.5A.75.75 0 0 1 9.25 4Zm4 2a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z"></path></svg>
-    Repositories traffic
-  </h2>
+  <section>
+    <h2 class="field">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M0 8a8 8 0 1116 0v5.25a.75.75 0 01-1.5 0V8a6.5 6.5 0 10-13 0v5.25a.75.75 0 01-1.5 0V8zm5.5 4.25a.75.75 0 01.75-.75h3.5a.75.75 0 010 1.5h-3.5a.75.75 0 01-.75-.75zM3 6.75C3 5.784 3.784 5 4.75 5h6.5c.966 0 1.75.784 1.75 1.75v1.5A1.75 1.75 0 0111.25 10h-6.5A1.75 1.75 0 013 8.25v-1.5zm1.47-.53a.75.75 0 011.06 0l.97.97.97-.97a.75.75 0 011.06 0l.97.97.97-.97a.75.75 0 111.06 1.06l-1.5 1.5a.75.75 0 01-1.06 0L8 7.81l-.97.97a.75.75 0 01-1.06 0l-1.5-1.5a.75.75 0 010-1.06z"></path></svg>
+      Recent activity
+    </h2>
+    <div class="row">
+      <section>
 
-    <div style="display:flex;align-items:baseline;gap:10px;margin:12px 12px 2px">
-      <strong style="font-size:28px;line-height:32px;font-weight:600">41</strong>
-      <span style="font-size:13px">page views</span>
+
+
+            <div class="row fill-width">
+              <section class="activity">
+
+                  <div class="field">
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+
+                    <div class="content">
+                      Deleted
+                      branch  <span class="code">app-shell</span> in  <span class="repo">siruimei07/UofT-Courses-Programs</span>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="timestamp">
+                    Oct 8, 2026, 10:25 EDT
+                  </div>
+
+              </section>
+            </div>
+
+            <div class="row fill-width">
+              <section class="activity">
+
+                  <div class="field">
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+
+                    <div class="content">
+                      Deleted
+                      branch  <span class="code">ui-panels</span> in  <span class="repo">siruimei07/UofT-Courses-Programs</span>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="timestamp">
+                    Oct 8, 2026, 10:25 EDT
+                  </div>
+
+              </section>
+            </div>
+
+            <div class="row fill-width">
+              <section class="activity">
+
+                  <div class="field">
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+
+                    <div class="content">
+                      Deleted
+                      branch  <span class="code">pipeline-multicampus</span> in  <span class="repo">siruimei07/UofT-Courses-Programs</span>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="timestamp">
+                    Oct 8, 2026, 10:25 EDT
+                  </div>
+
+              </section>
+            </div>
+
+            <div class="row fill-width">
+              <section class="activity">
+
+                  <div class="field">
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+
+                    <div class="content">
+                      Deleted
+                      branch  <span class="code">graph-renderer</span> in  <span class="repo">siruimei07/UofT-Courses-Programs</span>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="timestamp">
+                    Oct 8, 2026, 10:25 EDT
+                  </div>
+
+              </section>
+            </div>
+
+            <div class="row fill-width">
+              <section class="activity">
+
+                  <div class="field">
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+
+                    <div class="content">
+                      Deleted
+                      branch  <span class="code">graph-core</span> in  <span class="repo">siruimei07/UofT-Courses-Programs</span>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="timestamp">
+                    Oct 8, 2026, 10:24 EDT
+                  </div>
+
+              </section>
+            </div>
+
+
+      </section>
     </div>
-    <div style="margin:0 12px 2px;font-size:12px;line-height:18px">Latest 14-day repository snapshots</div>
-    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Sep 23, 2026 – Oct 8, 2026</div>
-    <svg xmlns="http://www.w3.org/2000/svg" width="456" height="108" viewBox="0 0 456 108" role="img" aria-label="Daily repository page views">
-      <line x1="12" y1="87" x2="444" y2="87" stroke="currentColor" opacity="0.2"></line>
-
-        <rect x="14" y="65.4" width="23" height="21.6" rx="2" fill="#2ea043"><title>2026-09-23: 6 views</title></rect>
-
-        <rect x="41" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-24: 0 views</title></rect>
-
-        <rect x="68" y="83.4" width="23" height="3.6" rx="2" fill="#2ea043"><title>2026-09-25: 1 views</title></rect>
-
-        <rect x="95" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-26: 0 views</title></rect>
-
-        <rect x="122" y="15" width="23" height="72" rx="2" fill="#2ea043"><title>2026-09-27: 20 views</title></rect>
-
-        <rect x="149" y="83.4" width="23" height="3.6" rx="2" fill="#2ea043"><title>2026-09-28: 1 views</title></rect>
-
-        <rect x="176" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-09-29: 0 views</title></rect>
-
-        <rect x="203" y="79.8" width="23" height="7.2" rx="2" fill="#2ea043"><title>2026-09-30: 2 views</title></rect>
-
-        <rect x="230" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-01: 0 views</title></rect>
-
-        <rect x="257" y="72.6" width="23" height="14.4" rx="2" fill="#2ea043"><title>2026-10-02: 4 views</title></rect>
-
-        <rect x="284" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-03: 0 views</title></rect>
-
-        <rect x="311" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-04: 0 views</title></rect>
-
-        <rect x="338" y="69" width="23" height="18" rx="2" fill="#2ea043"><title>2026-10-05: 5 views</title></rect>
-
-        <rect x="365" y="79.8" width="23" height="7.2" rx="2" fill="#2ea043"><title>2026-10-06: 2 views</title></rect>
-
-        <rect x="392" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-07: 0 views</title></rect>
-
-        <rect x="419" y="87" width="23" height="0" rx="2" fill="#2ea043"><title>2026-10-08: 0 views</title></rect>
-
-      <text x="12" y="104" fill="currentColor" style="font-size:10px">09-23</text>
-      <text x="228" y="104" fill="currentColor" text-anchor="middle" style="font-size:10px">Daily reported views · UTC</text>
-      <text x="444" y="104" fill="currentColor" text-anchor="end" style="font-size:10px">10-08</text>
-    </svg>
-    <div style="margin:6px 12px 8px">
-
-        <div style="margin-bottom:4px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
-            <span style="overflow-wrap:anywhere">siruimei07.github.io</span>
-            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">30</span>
-          </div>
-          <div style="font-size:11px;line-height:16px">Sep 23, 2026 – Oct 6, 2026</div>
-        </div>
-
-        <div style="margin-bottom:4px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
-            <span style="overflow-wrap:anywhere">GUI-for-RePKG</span>
-            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">11</span>
-          </div>
-          <div style="font-size:11px;line-height:16px">Sep 23, 2026 – Oct 6, 2026</div>
-        </div>
-
-        <div style="margin-bottom:4px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
-            <span style="overflow-wrap:anywhere">Folio</span>
-            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">0</span>
-          </div>
-          <div style="font-size:11px;line-height:16px">Sep 25, 2026 – Oct 8, 2026</div>
-        </div>
-
-        <div style="margin-bottom:4px">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:12px;line-height:20px">
-            <span style="overflow-wrap:anywhere">Stronghold-Protocol</span>
-            <span style="white-space:nowrap;font-variant-numeric:tabular-nums">0</span>
-          </div>
-          <div style="font-size:11px;line-height:16px">Sep 25, 2026 – Oct 8, 2026</div>
-        </div>
-
-    </div>
-    <div style="margin:0 12px 4px;font-size:11px;line-height:16px">Snapshot captured Oct 8, 2026 (UTC)</div>
-    <div style="margin:0 12px 8px;font-size:11px;line-height:16px">4 public repositories</div>
-
-</section>
+  </section>
 
 
 
