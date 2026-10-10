@@ -5,8 +5,8 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.57046b7f2ec98c52.svg" />
-    <img src="./assets/metrics/isocalendar-light.7dbef11c26376a6c.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.77682639869e5513.svg" />
+    <img src="./assets/metrics/isocalendar-light.d12f2cb5748a9c48.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.b58b7a21dacefe43.svg" />
@@ -32,7 +32,7 @@
     <img src="./assets/metrics/activity-light.8d5cf9d4e212ca87.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.b0755d4c72c85ecc.svg" />
-    <img src="./assets/metrics/traffic-light.f420e2a34971b2c4.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.70875eb7b6d79ef8.svg" />
+    <img src="./assets/metrics/traffic-light.5c442509b37ebe46.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>
