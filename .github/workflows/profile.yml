@@ -51,8 +51,14 @@ jobs:
           python -m pip install Pillow==12.3.0
           npm ci --prefix scripts/metrics --ignore-scripts
 
+      - name: Check profile loading animation
+        run: python -m unittest discover -s scripts -p test_build_loading.py
+
       - name: Check Metrics adapters
         run: node --test scripts/metrics/activity.test.mjs scripts/metrics/traffic.test.mjs scripts/metrics/publish.test.mjs
+
+      - name: Build profile loading animation
+        run: python scripts/build_loading.py
 
       - name: Build banner
         env:

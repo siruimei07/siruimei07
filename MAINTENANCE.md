@@ -2,6 +2,14 @@
 
 This repository powers [siruimei07's GitHub profile](https://github.com/siruimei07).
 
+## Loading animation
+
+The panel above the image banner adapts the loading sequence from [RhineLabUI](https://github.com/LBEILC/RhineLabUI/tree/12cc5e4013acb9408f753ff71de6b8492299b7c8), pinned to `12cc5e4013acb9408f753ff71de6b8492299b7c8`, and its [reference video](https://www.bilibili.com/video/BV1rr4y1b7sz/). It types an access-permission prompt, animates the infinity authentication symbol and orbit scan, then displays `WELCOME TO / SIRUIMEI07 / PUBLIC ARCHIVE`. The APNG plays once for about 12 seconds and holds that welcome frame. Light and dark versions follow the visitor's color scheme; reduced-motion preferences select a static welcome panel.
+
+The sequence is a decorative introduction; it does not check identity or authenticate access. A GitHub README displays the APNG as an image, so it cannot wait for the banner to load or collapse the panel after playback.
+
+Settings and reproducible source assets are kept in `banners/loading/`. `scripts/build_loading.py` reads `banners/loading/config.json` and writes `assets/loading-light.png`, `assets/loading-dark.png`, `assets/loading-static-light.png`, and `assets/loading-static-dark.png`. Its optional `--config` and `--output-dir` arguments support alternate settings and output folders. The profile workflow checks and rebuilds these files alongside the banner.
+
 ## Banners
 
 Add images to `banners/originals/` and push to `main`. See [banner settings](banners/README.md) for crop positions and selecting a fixed image.
@@ -12,7 +20,7 @@ The default is a transparent APNG slideshow with a 5-second interval and a shuff
 
 [Update profile](https://github.com/siruimei07/siruimei07/actions/workflows/profile.yml) runs daily at 10:17 UTC, on relevant pushes, or manually. Its optional `banner` input saves a new banner selection; leave it empty to keep the current setting.
 
-The workflow builds banners, refreshes the public repository table, and renders the Metrics charts. Calendar, languages, activity, and the repository list use public data with the automatically supplied repository `GITHUB_TOKEN`. Traffic uses an optional `TRAFFIC_TOKEN` secret because GitHub restricts analytics to people with repository access.
+The workflow builds the loading panel and banners, refreshes the public repository table, and renders the Metrics charts. Calendar, languages, activity, and the repository list use public data with the automatically supplied repository `GITHUB_TOKEN`. Traffic uses an optional `TRAFFIC_TOKEN` secret because GitHub restricts analytics to people with repository access.
 
 ## Metrics
 
@@ -41,6 +49,7 @@ To regenerate locally, use Node.js 22+, Python 3.12+, and Chrome or Chromium:
 ```powershell
 python -m pip install Pillow==12.3.0
 npm ci --prefix scripts/metrics --ignore-scripts
+python scripts/build_loading.py
 python scripts/build_banner.py
 python scripts/update_repositories.py
 $env:METRICS_OUTPUT_DIR = 'assets'

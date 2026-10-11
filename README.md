@@ -1,4 +1,11 @@
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/loading-static-dark.png" />
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/loading-static-light.png" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/loading-dark.png" />
+  <img src="./assets/loading-light.png" width="100%" alt="Rhine Lab-inspired loading sequence: access-permission typing, infinity authentication, orbit scan, then WELCOME TO SIRUIMEI07 PUBLIC ARCHIVE. Plays once." />
+</picture>
+
+<picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/banner-static.png" />
   <img src="./assets/banner.png" width="100%" alt="Illustrated scenes play in a shuffled order, changing every 5 seconds and fading into the page." />
 </picture>
