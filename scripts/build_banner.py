@@ -1,7 +1,7 @@
 """Crop local artwork into profile banners without repainting or resampling it.
 
 Each output retains the cropped source RGB pixels. Only its alpha channel is
-changed, fading the lower half into either GitHub background theme.
+changed, fading the lower portion into either GitHub background theme.
 """
 
 import argparse
@@ -48,10 +48,14 @@ def make_banner(source: Path, settings: dict) -> Image.Image:
     top = crop_offset(settings.get("crop_y", 0.5), height - crop_height, f"{source.name}: crop_y")
     banner = canvas.crop((left, top, left + crop_width, top + crop_height))
 
+    # Keep subjects clear before fading into the page background.
+    fade_start = settings.get("fade_start", 0.5)
+    if isinstance(fade_start, bool) or not isinstance(fade_start, (int, float)) or not 0 <= fade_start < 1:
+        raise ValueError(f"{source.name}: fade_start must be a number from 0.0 up to, but not including, 1.0")
     # Smoothstep has zero slope at both ends of the transition.
     opacity = []
     for y in range(crop_height):
-        progress = max(0.0, min(1.0, (y / max(1, crop_height - 1) - 0.5) * 2))
+        progress = max(0.0, min(1.0, (y / max(1, crop_height - 1) - fade_start) / (1 - fade_start)))
         opacity.append(round(255 * (1 - progress * progress * (3 - 2 * progress))))
     mask = Image.new("L", (1, crop_height))
     mask.putdata(opacity)
@@ -107,7 +111,7 @@ def main() -> None:
     try:
         selection = args.select or config.get("selection", "slideshow")
         selected = select_source(sources, selection, config, args.date)
-        interval = config.get("interval_ms", 12000)
+        interval = config.get("interval_ms", 5000)
         if isinstance(interval, bool) or not isinstance(interval, int) or interval < 1000:
             raise ValueError("interval_ms must be an integer of at least 1000 milliseconds")
         args.output_dir.mkdir(parents=True, exist_ok=True)

@@ -1,6 +1,6 @@
 {
   "selection": "slideshow",
-  "interval_ms": 12000,
+  "interval_ms": 5000,
   "default": "60_i09.png",
   "order": [
     "60_i09.png",
@@ -8,7 +8,9 @@
     "61_i21.png",
     "73_i25_1.png",
     "73_i25_2.png",
-    "73_i25_4.png"
+    "73_i25_4.png",
+    "74_i13_1.png",
+    "74_i07.png"
   ],
   "images": {
     "47_i13_1.png": { "crop_y": 160 },
@@ -16,6 +18,8 @@
     "61_i21.png": { "crop_y": 250 },
     "73_i25_1.png": { "crop_y": 360 },
     "73_i25_2.png": { "crop_y": 366 },
-    "73_i25_4.png": { "crop_y": 100 }
+    "73_i25_4.png": { "crop_y": 100 },
+    "74_i13_1.png": { "crop_y": 270, "fade_start": 0.75 },
+    "74_i07.png": { "crop_y": 200, "fade_start": 0.68 }
   }
 }
