@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       banner:
-        description: "留空保留设置；slideshow 每5秒轮播；或填写原图文件名"
+        description: "留空保留设置；random 随机顺序、slideshow 顺序轮播（每5秒）；或填写原图文件名"
         required: false
         default: ""
         type: string

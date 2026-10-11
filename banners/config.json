@@ -1,5 +1,5 @@
 {
-  "selection": "slideshow",
+  "selection": "random",
   "interval_ms": 5000,
   "default": "60_i09.png",
   "order": [

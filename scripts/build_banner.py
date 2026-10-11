@@ -7,6 +7,7 @@ changed, fading the lower portion into either GitHub background theme.
 import argparse
 import json
 import math
+import random
 from datetime import date, datetime, timezone
 from pathlib import Path
 import shutil
@@ -66,7 +67,7 @@ def make_banner(source: Path, settings: dict) -> Image.Image:
 
 
 def select_source(sources: list[Path], selection: str, config: dict, day: date) -> Path:
-    if selection == "slideshow":
+    if selection in {"slideshow", "random"}:
         selection = "default"
     if selection == "auto":
         # Filesystem ordering and machine locale never affect the rotation.
@@ -75,14 +76,14 @@ def select_source(sources: list[Path], selection: str, config: dict, day: date) 
         selection = config.get("default", sources[0].name)
     matches = [source for source in sources if source.name == selection]
     if not matches:
-        raise ValueError(f"Unknown banner {selection!r}; choose slideshow, auto, default, or one of: "
+        raise ValueError(f"Unknown banner {selection!r}; choose random, slideshow, auto, default, or one of: "
                          + ", ".join(source.name for source in sources))
     return matches[0]
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--select", help="slideshow, auto, default, or an exact source filename; defaults to config.json selection")
+    parser.add_argument("--select", help="random, slideshow, auto, default, or an exact source filename; defaults to config.json selection")
     parser.add_argument("--save-selection", action="store_true",
                         help="persist an explicit --select choice in config.json")
     parser.add_argument("--date", type=date.fromisoformat, default=datetime.now(timezone.utc).date(),
@@ -125,8 +126,8 @@ def main() -> None:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.static_output.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(args.output_dir / f"{selected.stem}.png", args.static_output)
-        if selection == "slideshow":
-            # The poster leads; explicit order follows, then newly added files.
+        if selection in {"slideshow", "random"}:
+            # Ordered playback starts with the poster, then configured and new files.
             configured_order = config.get("order", [])
             if not isinstance(configured_order, list) or not all(isinstance(name, str) for name in configured_order):
                 raise ValueError("order must be a list of source filenames")
@@ -137,6 +138,9 @@ def main() -> None:
                 if name in by_name and name not in seen:
                     ordered.append(by_name[name])
                     seen.add(name)
+            if selection == "random":
+                # APNG repeats this permutation; the next build shuffles it again.
+                random.shuffle(ordered)
             frame_width = min(1600, max(banner.width for banner in banners.values()))
             frame_size = (frame_width, math.ceil(frame_width / 3))
             frames = []
@@ -155,14 +159,18 @@ def main() -> None:
             frames[0].save(args.output, format="PNG", save_all=True,
                            append_images=frames[1:], duration=interval,
                            loop=0, disposal=0, blend=0, optimize=True)
-            print(f"Slideshow: {len(frames)} frames, {interval} ms each, infinite loop")
+            print(f"{selection.title()}: {len(frames)} frames, {interval} ms each, infinite loop")
+            print("Playback order: " + " -> ".join(source.name for source in ordered))
         else:
             shutil.copyfile(args.output_dir / f"{selected.stem}.png", args.output)
         if args.save_selection:
             config["selection"] = args.select
             args.config.parent.mkdir(parents=True, exist_ok=True)
             args.config.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"Active banner: {selected.name} ({args.date.isoformat()} UTC) -> {args.output}")
+        if selection in {"slideshow", "random"}:
+            print(f"Static fallback: {selected.name} -> {args.static_output}")
+        else:
+            print(f"Active banner: {selected.name} ({args.date.isoformat()} UTC) -> {args.output}")
     except (ValueError, OSError) as error:
         parser.error(str(error))
 

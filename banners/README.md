@@ -21,16 +21,19 @@
 
 `banners/config.json` 中的 `selection` 控制默认选择：
 
-- `"slideshow"`（默认）：在页面内每 5 秒自动切换一张，循环播放。先显示 `default` 指定的图片，再遵循 `order` 数组中的顺序。
+- `"random"`（默认）：每次生成时随机打乱所有图片，每 5 秒切换一张；一组中每张图恰好出现一次，整组循环播放，首张也参与随机。系统减少动态效果时仍显示 `default` 指定的静态图片。
+- `"slideshow"`：在页面内每 5 秒自动切换一张，循环播放。先显示 `default` 指定的图片，再遵循 `order` 数组中的顺序。
 - `"auto"`：按 UTC 日期每天选择一张静态图片，文件名排序决定顺序。同一天重复运行会选择同一张。
 - `"default"`：固定使用 `default` 指定的图片，初始为 `60_i09.png`。
 - `"47_i13_1.png"` 等原始文件名：固定使用指定图片。
 
 页面轮播使用支持完整透明度的 APNG 图片，不依赖 JavaScript，也没有点击切换按钮。启用系统「减少动态效果」时，主页使用静态横幅。可修改 `interval_ms` 调整每张图的停留时间，`5000` 表示 5 秒。
 
-当前播放顺序：`60_i09` → `47_i13_1` → `61_i21` → `73_i25_1` → `73_i25_2` → `73_i25_4` → `74_i13_1` → `74_i07`。编辑 `order` 可以调整顺序；新加入但未列入数组的图片会按文件名顺序追加。已移除的文件和重复条目会自动跳过。第一张始终由 `default` 指定。
+APNG 的播放顺序固定在文件里，因此随机模式是在生成时洗牌；同一文件每轮按相同顺序播放。每日自动更新、相关文件推送或手动运行工作流时会重新洗牌，刷新网页不会单独重新洗牌。
 
-手动运行 GitHub 工作流时可填写 `slideshow`、`auto`、`default` 或完整文件名；该选择会保存到配置中，后续运行也会继续使用。留空则保持当前设置。要恢复页面内轮播，填写 `slideshow`。
+顺序模式的播放顺序：`60_i09` → `47_i13_1` → `61_i21` → `73_i25_1` → `73_i25_2` → `73_i25_4` → `74_i13_1` → `74_i07`。编辑 `order` 可以调整顺序；新加入但未列入数组的图片会按文件名顺序追加。已移除的文件和重复条目会自动跳过。顺序模式的第一张始终由 `default` 指定，随机模式会打乱全部图片。
+
+手动运行 GitHub 工作流时可填写 `random`、`slideshow`、`auto`、`default` 或完整文件名；该选择会保存到配置中，后续运行也会继续使用。留空则保持当前设置。要恢复随机顺序轮播，填写 `random`；要固定播放顺序，填写 `slideshow`。
 
 ## 调整裁切
 
@@ -57,6 +60,7 @@
 ```bash
 python -m pip install Pillow
 python scripts/build_banner.py
+python scripts/build_banner.py --select random --save-selection
 python scripts/build_banner.py --select slideshow --save-selection
 python scripts/build_banner.py --select 60_i09.png
 python scripts/build_banner.py --select 60_i09.png --save-selection

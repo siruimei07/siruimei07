@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/banner-static.png" />
-  <img src="./assets/banner.png" width="100%" alt="A collection of illustrated scenes rotates every 5 seconds, with each scene fading into the page." />
+  <img src="./assets/banner.png" width="100%" alt="Illustrated scenes play in a shuffled order, changing every 5 seconds and fading into the page." />
 </picture>
 
 <p>
