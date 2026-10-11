@@ -1,6 +1,11 @@
 {
   "selection": "random",
   "interval_ms": 5000,
+  "transition": {
+    "effect": "crossfade",
+    "duration_ms": 500,
+    "frames": 4
+  },
   "default": "60_i09.png",
   "order": [
     "60_i09.png",

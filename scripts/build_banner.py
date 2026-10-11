@@ -2,6 +2,7 @@
 
 Each output retains the cropped source RGB pixels. Only its alpha channel is
 changed, fading the lower portion into either GitHub background theme.
+Optional crossfade frames blend those crops without changing the source images.
 """
 
 import argparse
@@ -81,6 +82,44 @@ def select_source(sources: list[Path], selection: str, config: dict, day: date) 
     return matches[0]
 
 
+def read_transition(settings: dict, interval: int) -> tuple[int, int]:
+    if not isinstance(settings, dict):
+        raise ValueError("transition must be an object")
+    effect = settings.get("effect", "none")
+    if effect == "none":
+        return 0, 0
+    if effect != "crossfade":
+        raise ValueError("transition.effect must be none or crossfade")
+    duration = settings.get("duration_ms", 500)
+    steps = settings.get("frames", 4)
+    if isinstance(duration, bool) or not isinstance(duration, int) or not 0 < duration < interval:
+        raise ValueError("transition.duration_ms must be a positive integer smaller than interval_ms")
+    if isinstance(steps, bool) or not isinstance(steps, int) or not 1 <= steps <= min(60, duration):
+        raise ValueError("transition.frames must be an integer from 1 to 60, no greater than duration_ms")
+    return duration, steps
+
+
+def build_animation(frames: list[Image.Image], interval: int,
+                    duration_ms: int, steps: int) -> tuple[list[Image.Image], list[int]]:
+    if not duration_ms or len(frames) < 2:
+        return frames, [interval] * len(frames)
+    animation = []
+    durations = []
+    # Blending premultiplied colors prevents hidden RGB in transparent pixels
+    # from producing dark or colored fringes on either page background.
+    premultiplied = [frame.convert("RGBa") for frame in frames]
+    for index, frame in enumerate(frames):
+        animation.append(frame)
+        durations.append(interval - duration_ms)
+        target = premultiplied[(index + 1) % len(frames)]
+        for step in range(1, steps + 1):
+            animation.append(Image.blend(premultiplied[index], target,
+                                         step / (steps + 1)).convert("RGBA"))
+            # Distribute leftover milliseconds without changing the period.
+            durations.append(step * duration_ms // steps - (step - 1) * duration_ms // steps)
+    return animation, durations
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--select", help="random, slideshow, auto, default, or an exact source filename; defaults to config.json selection")
@@ -115,6 +154,7 @@ def main() -> None:
         interval = config.get("interval_ms", 5000)
         if isinstance(interval, bool) or not isinstance(interval, int) or interval < 1000:
             raise ValueError("interval_ms must be an integer of at least 1000 milliseconds")
+        transition_duration, transition_steps = read_transition(config.get("transition", {}), interval)
         args.output_dir.mkdir(parents=True, exist_ok=True)
         banners = {}
         for source in sources:
@@ -155,11 +195,13 @@ def main() -> None:
                     frame.paste(fitted, ((frame.width - fitted.width) // 2,
                                         (frame.height - fitted.height) // 2))
                 frames.append(frame)
+            animation, durations = build_animation(frames, interval, transition_duration, transition_steps)
             # SOURCE blending replaces every pixel, including full transparency.
-            frames[0].save(args.output, format="PNG", save_all=True,
-                           append_images=frames[1:], duration=interval,
+            animation[0].save(args.output, format="PNG", save_all=True,
+                           append_images=animation[1:], duration=durations,
                            loop=0, disposal=0, blend=0, optimize=True)
-            print(f"{selection.title()}: {len(frames)} frames, {interval} ms each, infinite loop")
+            print(f"{selection.title()}: {len(frames)} scenes, {len(animation)} frames, "
+                  f"{interval} ms per scene including {transition_duration} ms crossfade, infinite loop")
             print("Playback order: " + " -> ".join(source.name for source in ordered))
         else:
             shutil.copyfile(args.output_dir / f"{selected.stem}.png", args.output)

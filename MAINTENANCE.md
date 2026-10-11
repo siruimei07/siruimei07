@@ -6,7 +6,7 @@ This repository powers [siruimei07's GitHub profile](https://github.com/siruimei
 
 Add images to `banners/originals/` and push to `main`. See [banner settings](banners/README.md) for crop positions and selecting a fixed image.
 
-The default is a transparent APNG slideshow with a 5-second interval and a shuffled order. Every build shuffles all images once; that order repeats until the next build. The README uses the configured default image as a static fallback when the visitor requests reduced motion. Original image pixels are cropped directly; no generative image tools are used.
+The default is a transparent APNG slideshow with a shuffled order and a 5-second interval: 4.5 seconds still, then a 0.5-second crossfade. The last image also fades into the first. Every build shuffles all images once; that order repeats until the next build. The README uses the configured default image as a static fallback when the visitor requests reduced motion. Static crops and still frames preserve the original RGB pixels; only transition frames blend adjacent crops. No generative image tools are used.
 
 ## Automatic updates
 
