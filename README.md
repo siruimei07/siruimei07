@@ -28,8 +28,8 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.8a2bac4a5c674648.svg" />
-    <img src="./assets/metrics/activity-light.8d5cf9d4e212ca87.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.47b5d74180836417.svg" />
+    <img src="./assets/metrics/activity-light.792245e0bb37db88.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.d9706eed53a970e9.svg" />
