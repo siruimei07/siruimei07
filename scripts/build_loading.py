@@ -63,7 +63,7 @@ def read_config(path: Path) -> dict:
     if not isinstance(config, dict):
         raise ValueError("loading config must be an object")
     limits = {"width": (640, 1920), "height": (160, 600),
-              "fps": (10, 30), "duration_ms": (11000, 20000)}
+              "fps": (10, 60), "duration_ms": (11000, 20000)}
     for name, (minimum, maximum) in limits.items():
         value = config.get(name)
         if isinstance(value, bool) or not isinstance(value, int) or not minimum <= value <= maximum:
@@ -310,6 +310,8 @@ def build(config: dict, output_dir: Path) -> list[Path]:
         outputs.extend((animation, static))
         print(f"Built {animation.name}: {config['width']} x {config['height']}, "
               f"{config['duration_ms']} ms, plays once, {animation.stat().st_size:,} bytes")
+        # Release this theme before allocating the next full 60 fps sequence.
+        del frames
     return outputs
 
 

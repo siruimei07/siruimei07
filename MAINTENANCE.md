@@ -4,7 +4,7 @@ This repository powers [siruimei07's GitHub profile](https://github.com/siruimei
 
 ## Loading animation
 
-The panel above the image banner adapts the loading sequence from [RhineLabUI](https://github.com/LBEILC/RhineLabUI/tree/12cc5e4013acb9408f753ff71de6b8492299b7c8), pinned to `12cc5e4013acb9408f753ff71de6b8492299b7c8`, and its [reference video](https://www.bilibili.com/video/BV1rr4y1b7sz/). It types an access-permission prompt, animates the infinity authentication symbol and orbit scan, then displays `WELCOME TO / SIRUIMEI07 / PUBLIC ARCHIVE`. The APNG plays once for about 12 seconds and holds that welcome frame. Light and dark versions follow the visitor's color scheme; reduced-motion preferences select a static welcome panel.
+The panel above the image banner adapts the loading sequence from [RhineLabUI](https://github.com/LBEILC/RhineLabUI/tree/12cc5e4013acb9408f753ff71de6b8492299b7c8), pinned to `12cc5e4013acb9408f753ff71de6b8492299b7c8`, and its [reference video](https://www.bilibili.com/video/BV1rr4y1b7sz/). It types an access-permission prompt, animates the infinity authentication symbol and orbit scan, then displays `WELCOME TO / SIRUI MEI / PUBLIC ARCHIVE`. The APNG plays once for about 12 seconds at 60 fps and holds that welcome frame. Light and dark versions follow the visitor's color scheme; reduced-motion preferences select a static welcome panel.
 
 The sequence is a decorative introduction; it does not check identity or authenticate access. A GitHub README displays the APNG as an image, so it cannot wait for the banner to load or collapse the panel after playback.
 

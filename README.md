@@ -2,7 +2,7 @@
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/loading-static-dark.png" />
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/loading-static-light.png" />
   <source media="(prefers-color-scheme: dark)" srcset="./assets/loading-dark.png" />
-  <img src="./assets/loading-light.png" width="100%" alt="Rhine Lab-inspired loading sequence: access-permission typing, infinity authentication, orbit scan, then WELCOME TO SIRUIMEI07 PUBLIC ARCHIVE. Plays once." />
+  <img src="./assets/loading-light.png" width="100%" alt="Rhine Lab-inspired loading sequence: access-permission typing, infinity authentication, orbit scan, then WELCOME TO SIRUI MEI PUBLIC ARCHIVE. Plays once at 60 fps." />
 </picture>
 
 <picture>

@@ -10,7 +10,7 @@
 python scripts/build_loading.py
 ```
 
-`config.json` 可修改 `profile_name`、`subtitle`（最多 24 个可打印 ASCII 字符）、画布大小（保持 4:1）、`fps`（10–30）和 `duration_ms`（11000–20000）。动作在前 10.4 秒完成，其余时间停留在欢迎画面。默认画布为 1280 × 320、20 fps；默认输出目录为 `assets/`，可用 `--output-dir` 覆盖。
+`config.json` 可修改 `profile_name`、`subtitle`（最多 24 个可打印 ASCII 字符）、画布大小（保持 4:1）、`fps`（10–60）和 `duration_ms`（11000–20000）。动作在前 10.4 秒完成，其余时间停留在欢迎画面。默认名称为 `SIRUI MEI`，画布为 1280 × 320、60 fps；默认输出目录为 `assets/`，可用 `--output-dir` 覆盖。
 
 ## 来源与许可
 

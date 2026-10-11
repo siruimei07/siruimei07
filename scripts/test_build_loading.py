@@ -14,14 +14,14 @@ SMALL_CONFIG = {
     "height": 160,
     "fps": 10,
     "duration_ms": 11000,
-    "profile_name": "SIRUIMEI07",
+    "profile_name": "SIRUI MEI",
     "subtitle": "PUBLIC ARCHIVE",
 }
 
 
 class LoadingTimingTests(unittest.TestCase):
     def test_rounding_keeps_exact_duration_and_positive_frame_holds(self):
-        for duration_ms, fps in ((11000, 10), (11003, 24), (12000, 20)):
+        for duration_ms, fps in ((11000, 10), (11003, 24), (12000, 20), (12000, 60)):
             with self.subTest(duration_ms=duration_ms, fps=fps):
                 times, durations = frame_times(duration_ms, fps)
                 self.assertEqual(len(times), len(durations))
@@ -47,7 +47,7 @@ class LoadingConfigTests(unittest.TestCase):
         return read_config(self.config_path)
 
     def test_accepts_small_canvas_and_ascii_names_with_spaces(self):
-        config = {**SMALL_CONFIG, "profile_name": "NAME SPACE", "subtitle": "PUBLIC RECORDS"}
+        config = {**SMALL_CONFIG, "fps": 60, "profile_name": "SIRUI MEI", "subtitle": "PUBLIC RECORDS"}
         self.assertEqual(self.load(config), config)
 
     def test_rejects_non_object_configuration(self):
@@ -59,7 +59,7 @@ class LoadingConfigTests(unittest.TestCase):
         limits = {
             "width": (640, 1920),
             "height": (160, 600),
-            "fps": (10, 30),
+            "fps": (10, 60),
             "duration_ms": (11000, 20000),
         }
         for name, (minimum, maximum) in limits.items():
