@@ -1700,17 +1700,17 @@
             </mask>
             <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"></rect>
 
-              <rect mask="url(#languages-bar)" x="0" y="0" width="215.77306970486512" height="8" fill="#3178c6"></rect>
+              <rect mask="url(#languages-bar)" x="0" y="0" width="203.84374185871428" height="8" fill="#3178c6"></rect>
 
-              <rect mask="url(#languages-bar)" x="215.77306970486512" y="0" width="135.8188471132879" height="8" fill="#dea584"></rect>
+              <rect mask="url(#languages-bar)" x="203.84374185871428" y="0" width="139.0175665570915" height="8" fill="#dea584"></rect>
 
-              <rect mask="url(#languages-bar)" x="351.591916818153" y="0" width="82.19290598974462" height="8" fill="#7355dd"></rect>
+              <rect mask="url(#languages-bar)" x="342.8613084158058" y="0" width="84.12866124109657" height="8" fill="#7355dd"></rect>
 
-              <rect mask="url(#languages-bar)" x="433.7848228078976" y="0" width="12.904853840365254" height="8" fill="#663399"></rect>
+              <rect mask="url(#languages-bar)" x="426.98996965690236" y="0" width="19.045786092445212" height="8" fill="#663399"></rect>
 
-              <rect mask="url(#languages-bar)" x="446.68967664826283" y="0" width="7.718900940190591" height="8" fill="#3572A5"></rect>
+              <rect mask="url(#languages-bar)" x="446.03575574934763" y="0" width="8.05145416171561" height="8" fill="#3572A5"></rect>
 
-              <rect mask="url(#languages-bar)" x="454.40857758845345" y="0" width="5.591422411546521" height="8" fill="#ededed"></rect>
+              <rect mask="url(#languages-bar)" x="454.08720991106327" y="0" width="5.912790088936831" height="8" fill="#ededed"></rect>
 
           </svg>
 
@@ -1727,7 +1727,7 @@
                     <small>
 
 
-                       <div>46.9%</div>
+                       <div>44.3%</div>
                     </small>
                   </div>
 
@@ -1739,7 +1739,7 @@
                     <small>
 
 
-                       <div>17.9%</div>
+                       <div>18.3%</div>
                     </small>
                   </div>
 
@@ -1751,7 +1751,7 @@
                     <small>
 
 
-                       <div>1.7%</div>
+                       <div>1.8%</div>
                     </small>
                   </div>
 
@@ -1767,7 +1767,7 @@
                     <small>
 
 
-                       <div>29.5%</div>
+                       <div>30.2%</div>
                     </small>
                   </div>
 
@@ -1779,7 +1779,7 @@
                     <small>
 
 
-                       <div>2.8%</div>
+                       <div>4.1%</div>
                     </small>
                   </div>
 
@@ -1791,7 +1791,7 @@
                     <small>
 
 
-                       <div>1.2%</div>
+                       <div>1.3%</div>
                     </small>
                   </div>
 

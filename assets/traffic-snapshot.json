@@ -2,26 +2,16 @@
   "version": 1,
   "login": "siruimei07",
   "sourceRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
-  "capturedAt": "2026-10-11T20:13:29.489Z",
+  "capturedAt": "2026-10-12T19:50:33.233Z",
   "repositories": [
     {
-      "name": "GUI-for-RePKG",
-      "fullName": "siruimei07/GUI-for-RePKG",
+      "name": "rea",
+      "fullName": "siruimei07/rea",
       "public": true,
       "traffic": {
-        "count": 26,
-        "uniques": 7,
+        "count": 0,
+        "uniques": 0,
         "views": [
-          {
-            "timestamp": "2026-09-27T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-09-28T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-09-29T00:00:00Z",
             "count": 0,
@@ -29,8 +19,8 @@
           },
           {
             "timestamp": "2026-09-30T00:00:00Z",
-            "count": 2,
-            "uniques": 1
+            "count": 0,
+            "uniques": 0
           },
           {
             "timestamp": "2026-10-01T00:00:00Z",
@@ -39,8 +29,8 @@
           },
           {
             "timestamp": "2026-10-02T00:00:00Z",
-            "count": 2,
-            "uniques": 1
+            "count": 0,
+            "uniques": 0
           },
           {
             "timestamp": "2026-10-03T00:00:00Z",
@@ -54,13 +44,13 @@
           },
           {
             "timestamp": "2026-10-05T00:00:00Z",
-            "count": 5,
-            "uniques": 3
+            "count": 0,
+            "uniques": 0
           },
           {
             "timestamp": "2026-10-06T00:00:00Z",
-            "count": 2,
-            "uniques": 2
+            "count": 0,
+            "uniques": 0
           },
           {
             "timestamp": "2026-10-07T00:00:00Z",
@@ -69,8 +59,8 @@
           },
           {
             "timestamp": "2026-10-08T00:00:00Z",
-            "count": 15,
-            "uniques": 1
+            "count": 0,
+            "uniques": 0
           },
           {
             "timestamp": "2026-10-09T00:00:00Z",
@@ -79,6 +69,16 @@
           },
           {
             "timestamp": "2026-10-10T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-11T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-12T00:00:00Z",
             "count": 0,
             "uniques": 0
           }
@@ -86,22 +86,17 @@
       }
     },
     {
-      "name": "UofT-Courses-Programs",
-      "fullName": "siruimei07/UofT-Courses-Programs",
+      "name": "siruimei07.github.io",
+      "fullName": "siruimei07/siruimei07.github.io",
       "public": true,
       "traffic": {
-        "count": 2,
-        "uniques": 2,
+        "count": 6,
+        "uniques": 3,
         "views": [
           {
-            "timestamp": "2026-09-27T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
             "timestamp": "2026-09-28T00:00:00Z",
-            "count": 0,
-            "uniques": 0
+            "count": 1,
+            "uniques": 1
           },
           {
             "timestamp": "2026-09-29T00:00:00Z",
@@ -120,8 +115,8 @@
           },
           {
             "timestamp": "2026-10-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
+            "count": 2,
+            "uniques": 1
           },
           {
             "timestamp": "2026-10-03T00:00:00Z",
@@ -145,13 +140,13 @@
           },
           {
             "timestamp": "2026-10-07T00:00:00Z",
-            "count": 0,
-            "uniques": 0
+            "count": 2,
+            "uniques": 1
           },
           {
             "timestamp": "2026-10-08T00:00:00Z",
-            "count": 1,
-            "uniques": 1
+            "count": 0,
+            "uniques": 0
           },
           {
             "timestamp": "2026-10-09T00:00:00Z",
@@ -162,6 +157,11 @@
             "timestamp": "2026-10-10T00:00:00Z",
             "count": 1,
             "uniques": 1
+          },
+          {
+            "timestamp": "2026-10-11T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -171,14 +171,9 @@
       "fullName": "siruimei07/Folio",
       "public": true,
       "traffic": {
-        "count": 9,
+        "count": 10,
         "uniques": 2,
         "views": [
-          {
-            "timestamp": "2026-09-27T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-09-28T00:00:00Z",
             "count": 0,
@@ -243,6 +238,173 @@
             "timestamp": "2026-10-10T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-11T00:00:00Z",
+            "count": 1,
+            "uniques": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "GUI-for-RePKG",
+      "fullName": "siruimei07/GUI-for-RePKG",
+      "public": true,
+      "traffic": {
+        "count": 26,
+        "uniques": 7,
+        "views": [
+          {
+            "timestamp": "2026-09-28T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-09-29T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-09-30T00:00:00Z",
+            "count": 2,
+            "uniques": 1
+          },
+          {
+            "timestamp": "2026-10-01T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-02T00:00:00Z",
+            "count": 2,
+            "uniques": 1
+          },
+          {
+            "timestamp": "2026-10-03T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-04T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-05T00:00:00Z",
+            "count": 5,
+            "uniques": 3
+          },
+          {
+            "timestamp": "2026-10-06T00:00:00Z",
+            "count": 2,
+            "uniques": 2
+          },
+          {
+            "timestamp": "2026-10-07T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-08T00:00:00Z",
+            "count": 15,
+            "uniques": 1
+          },
+          {
+            "timestamp": "2026-10-09T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-10T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-11T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "UofT-Courses-Programs",
+      "fullName": "siruimei07/UofT-Courses-Programs",
+      "public": true,
+      "traffic": {
+        "count": 2,
+        "uniques": 2,
+        "views": [
+          {
+            "timestamp": "2026-09-28T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-09-29T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-09-30T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-01T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-02T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-03T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-04T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-05T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-06T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-07T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-08T00:00:00Z",
+            "count": 1,
+            "uniques": 1
+          },
+          {
+            "timestamp": "2026-10-09T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-10T00:00:00Z",
+            "count": 1,
+            "uniques": 1
+          },
+          {
+            "timestamp": "2026-10-11T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -255,11 +417,6 @@
         "count": 12,
         "uniques": 5,
         "views": [
-          {
-            "timestamp": "2026-09-27T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-09-28T00:00:00Z",
             "count": 0,
@@ -324,87 +481,11 @@
             "timestamp": "2026-10-10T00:00:00Z",
             "count": 1,
             "uniques": 1
-          }
-        ]
-      }
-    },
-    {
-      "name": "siruimei07.github.io",
-      "fullName": "siruimei07/siruimei07.github.io",
-      "public": true,
-      "traffic": {
-        "count": 26,
-        "uniques": 3,
-        "views": [
-          {
-            "timestamp": "2026-09-27T00:00:00Z",
-            "count": 20,
-            "uniques": 1
           },
           {
-            "timestamp": "2026-09-28T00:00:00Z",
-            "count": 1,
-            "uniques": 1
-          },
-          {
-            "timestamp": "2026-09-29T00:00:00Z",
+            "timestamp": "2026-10-11T00:00:00Z",
             "count": 0,
             "uniques": 0
-          },
-          {
-            "timestamp": "2026-09-30T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-02T00:00:00Z",
-            "count": 2,
-            "uniques": 1
-          },
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-04T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-05T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-06T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-07T00:00:00Z",
-            "count": 2,
-            "uniques": 1
-          },
-          {
-            "timestamp": "2026-10-08T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-09T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-10-10T00:00:00Z",
-            "count": 1,
-            "uniques": 1
           }
         ]
       }
