@@ -12,8 +12,8 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.09a3c05218af36be.svg" />
-    <img src="./assets/metrics/isocalendar-light.af8f55544d4aa577.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.4fd104c38025133f.svg" />
+    <img src="./assets/metrics/isocalendar-light.8dc0f08906d38d61.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.559c17c390dc418f.svg" />
@@ -36,11 +36,11 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.2b1b7f10433e42be.svg" />
-    <img src="./assets/metrics/activity-light.a9987e8afa771d95.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.4a7deacbb75ceb0e.svg" />
+    <img src="./assets/metrics/activity-light.5333d382f28aed5e.svg" width="49%" align="top" alt="Five recent public GitHub activities with timestamps." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.ffd876c7892c11ed.svg" />
-    <img src="./assets/metrics/traffic-light.099c88b0eea9e4a9.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.ebd7697370727d60.svg" />
+    <img src="./assets/metrics/traffic-light.639b420c1069a92c.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>
