@@ -1,0 +1,34 @@
+{
+  "headers": [
+    {
+      "id": "projects",
+      "number": "01",
+      "title": "PROJECT ARCHIVE",
+      "description": "WORKS AND PUBLIC REPOSITORIES",
+      "zh": "作品与公开仓库",
+      "code": "PRJ-001"
+    },
+    {
+      "id": "activity",
+      "number": "02",
+      "title": "ACTIVITY LOG",
+      "description": "CONTRIBUTIONS, CODE AND TRAFFIC",
+      "zh": "提交、代码量与访问量",
+      "code": "LOG-001"
+    }
+  ],
+  "buttons": [
+    {
+      "id": "site",
+      "label": "ANALYSIS OS",
+      "handle": "siruimei07.github.io",
+      "style": "filled"
+    },
+    {
+      "id": "mail",
+      "label": "MAIL",
+      "handle": "sirui.mei07@gmail.com",
+      "style": "outline"
+    }
+  ]
+}

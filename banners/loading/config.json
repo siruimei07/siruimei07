@@ -2,7 +2,18 @@
   "width": 1280,
   "height": 320,
   "fps": 60,
-  "duration_ms": 12000,
+  "duration_ms": 14000,
   "profile_name": "SIRUI MEI",
-  "subtitle": "PUBLIC ARCHIVE"
+  "subtitle": "PERSONAL DATABASE",
+  "tagline": "SYNTHESIZE INFORMATION",
+  "rank": "UNDERGRADUATE",
+  "affiliation": "UNIVERSITY OF TORONTO",
+  "focus": ["STATISTICS", "ECONOMICS", "QUANT"],
+  "code": "PRSN-001",
+  "captions": [
+    "需要访问权限",
+    "身份确认：访客",
+    "读取完毕，核验通过",
+    "欢迎访问 Sirui Mei 的个人资料档案"
+  ]
 }

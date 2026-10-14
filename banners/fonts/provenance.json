@@ -1,0 +1,42 @@
+{
+  "google_fonts": {
+    "repository": "https://github.com/google/fonts",
+    "revision": "bd8f81ddb5c74d5c8897b36ad88b440266245103",
+    "files": {
+      "Montserrat[wght].ttf": {
+        "path": "ofl/montserrat/Montserrat[wght].ttf",
+        "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7"
+      },
+      "OFL-Montserrat.txt": {
+        "path": "ofl/montserrat/OFL.txt",
+        "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e"
+      },
+      "JetBrainsMono[wght].ttf": {
+        "path": "ofl/jetbrainsmono/JetBrainsMono[wght].ttf",
+        "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda"
+      },
+      "OFL-JetBrainsMono.txt": {
+        "path": "ofl/jetbrainsmono/OFL.txt",
+        "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d"
+      }
+    }
+  },
+  "website": {
+    "repository": "https://github.com/siruimei07/siruimei07.github.io",
+    "revision": "22cb96903d5d554c342073a8f8d30527ff1ca057",
+    "files": {
+      "noto-sans-sc-500.woff2": {
+        "path": "src/fonts/noto-sans-sc-500.woff2",
+        "sha256": "ca30bb4d55c7b4afff881c71f16409064466a9bc306cf39a6515260ccea0e1be"
+      },
+      "noto-sans-sc-700.woff2": {
+        "path": "src/fonts/noto-sans-sc-700.woff2",
+        "sha256": "db49733af61689c7f8c37f82c1b341e326131251401570b054746300da1d7c9f"
+      },
+      "OFL-NotoSansSC.txt": {
+        "path": "src/fonts/OFL.txt",
+        "sha256": "f66b8291706488ea989ddd7cad9e4a0d0d464d1d5246afe9eb8681c5a3ed2215"
+      }
+    }
+  }
+}

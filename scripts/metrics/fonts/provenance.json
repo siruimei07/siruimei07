@@ -1,0 +1,13 @@
+{
+  "source": "banners/fonts (see banners/fonts/provenance.json)",
+  "generator": "scripts/build_card_fonts.py with fontTools 4.60.1 and brotli 1.2.0",
+  "chinese": "交仓代公动半年库开态成提最构的码访近问",
+  "sha256": {
+    "mont-500.woff2": "116b44f9f1b082b71dbb466384ebec0b1501f95fb10a5aa8abd20df84ad1bb3f",
+    "mont-600.woff2": "11fb26bfec273932d5c93e50c47c54dbe1d79da052c7e4ef53933c44df878822",
+    "mont-700.woff2": "177c1ad8d43f108e0fe77252256af08dc0a440c6b7656113fd2e468e221f5712",
+    "jbm-400.woff2": "d061946dd969a1516441a59e548dbf5ed9ef516228e47c8e94ce261d1d593d86",
+    "jbm-500.woff2": "ff0a862b5f674ad615f67f6f32e3713f0139a12d906c0ba25aa7306146749261",
+    "zh-500.woff2": "abbe6b00f2238486fdee6a36ae8f73b322a2d77a8033ca91c50a39fdd6b961c9"
+  }
+}

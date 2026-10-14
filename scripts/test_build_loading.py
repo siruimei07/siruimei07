@@ -6,16 +6,23 @@ import unittest
 
 from PIL import Image
 
-from build_loading import build, frame_times, read_config
+from build_loading import (SEGMENTS, auth_line, build, frame_times, motion_end, pv_frame, read_config,
+                           time_of)
 
 
 SMALL_CONFIG = {
     "width": 640,
     "height": 160,
     "fps": 10,
-    "duration_ms": 11000,
+    "duration_ms": 14000,
     "profile_name": "SIRUI MEI",
-    "subtitle": "PUBLIC ARCHIVE",
+    "subtitle": "PERSONAL DATABASE",
+    "tagline": "SYNTHESIZE INFORMATION",
+    "rank": "UNDERGRADUATE",
+    "affiliation": "UNIVERSITY OF TORONTO",
+    "focus": ["STATISTICS", "ECONOMICS", "QUANT"],
+    "code": "PRSN-001",
+    "captions": ["需要访问权限", "身份确认：访客", "读取完毕，核验通过", "欢迎访问 Sirui Mei 的个人资料档案"],
 }
 
 
@@ -36,6 +43,32 @@ class LoadingTimingTests(unittest.TestCase):
                 self.assertLess(times[-1] * 1000, duration_ms)
 
 
+class LoadingTimelineTests(unittest.TestCase):
+    def test_clip_time_maps_monotonically_onto_reference_frames(self):
+        previous = -1.0
+        for step in range(0, 1500):
+            frame = pv_frame(step / 100)
+            self.assertGreaterEqual(frame, previous)
+            previous = frame
+        for first, last, _ in SEGMENTS:
+            for frame in (first, (first + last) / 2, last):
+                with self.subTest(frame=frame):
+                    self.assertAlmostEqual(pv_frame(time_of(frame)), frame, places=6)
+
+    def test_default_duration_holds_the_finished_still(self):
+        self.assertLess(motion_end() * 1000, SMALL_CONFIG["duration_ms"])
+        self.assertGreaterEqual(pv_frame(motion_end()), SEGMENTS[-1][1])
+
+    def test_identity_lines_follow_the_reference_cuts(self):
+        self.assertEqual(auth_line(282), ("ID CONFIRMED : VISITOR", 0, 1))
+        self.assertEqual(auth_line(300)[2], len("ID CONFIRMED : "))
+        self.assertEqual(auth_line(362)[2], len("ID CONFIRMED : VISITOR"))
+        self.assertEqual(auth_line(400), ("REQUEST RECEIVED", 0, len("REQUEST RECEIVED")))
+        # Glitch frames keep only the tail of START PROCESSING..., in place.
+        self.assertEqual(auth_line(479), ("START PROCESSING...", 12, 19))
+        self.assertEqual(auth_line(470)[2], len("START PROCESSING..."))
+
+
 class LoadingConfigTests(unittest.TestCase):
     def setUp(self):
         temporary = tempfile.TemporaryDirectory(prefix="profile-loading-config-")
@@ -49,6 +82,20 @@ class LoadingConfigTests(unittest.TestCase):
     def test_accepts_small_canvas_and_ascii_names_with_spaces(self):
         config = {**SMALL_CONFIG, "fps": 60, "profile_name": "SIRUI MEI", "subtitle": "PUBLIC RECORDS"}
         self.assertEqual(self.load(config), config)
+
+    def test_rejects_a_duration_that_cuts_the_motion_short(self):
+        with self.assertRaisesRegex(ValueError, "finish the motion"):
+            self.load({**SMALL_CONFIG, "duration_ms": 12000})
+
+    def test_rejects_bad_focus_and_captions(self):
+        for value in (None, [], ["A"] * 5, ["统计"], ["X" * 15], "STATISTICS"):
+            with self.subTest(focus=value), self.assertRaisesRegex(ValueError, "focus"):
+                self.load({**SMALL_CONFIG, "focus": value})
+        for value in (None, ["一"] * 3, ["一"] * 5, ["一" * 31] * 4, [""] * 4):
+            with self.subTest(captions=value), self.assertRaisesRegex(ValueError, "captions"):
+                self.load({**SMALL_CONFIG, "captions": value})
+        with self.assertRaisesRegex(ValueError, "missing"):
+            self.load({**SMALL_CONFIG, "captions": ["鑫"] * 4})
 
     def test_rejects_non_object_configuration(self):
         for value in (None, [], True, "config"):
@@ -79,8 +126,8 @@ class LoadingConfigTests(unittest.TestCase):
                     self.load({**SMALL_CONFIG, "width": width, "height": height})
 
     def test_rejects_missing_empty_non_ascii_and_overlong_text(self):
-        for name in ("profile_name", "subtitle"):
-            for value in (None, True, 123, "", "   ", "A" * 25, "档案"):
+        for name in ("profile_name", "subtitle", "tagline", "rank", "affiliation", "code"):
+            for value in (None, True, 123, "", "   ", "A" * 29, "档案"):
                 with self.subTest(name=name, value=value):
                     with self.assertRaisesRegex(ValueError, name):
                         self.load({**SMALL_CONFIG, name: value})

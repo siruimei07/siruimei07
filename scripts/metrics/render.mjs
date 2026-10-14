@@ -7,6 +7,7 @@ import {JSDOM} from 'jsdom';
 import puppeteer from 'puppeteer-core';
 import {loadActivity,activityTemplate} from './activity.mjs';
 import {loadTraffic} from './traffic.mjs';
+import {cardCss,fontFaces,recolorIso,HEADINGS,LANGUAGE_RAMP,LEVEL_SENTINELS,retitle,once,stamp} from './theme.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const upstream = path.join(root, 'vendor/metrics');
@@ -85,7 +86,7 @@ for (const year of [now.getUTCFullYear()-1, now.getUTCFullYear()]) {
     allDays.set(cell.dataset.date, {date:cell.dataset.date, contributionCount:matched[1]==='No'?0:Number(matched[1].replaceAll(',','')),level});
   }
 }
-const levelColors = ['#ebedf0','#9be9a8','#40c463','#30a14e','#216e39'];
+const levelColors = LEVEL_SENTINELS;
 const calendarGraphql = async ({from,to}) => {
   const start = from.slice(0,10), end = to.slice(0,10);
   const contributionDays=[];
@@ -120,10 +121,8 @@ const activityPartial=activityTemplate(await fs.readFile(path.join(upstream,'sou
 const f=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
 f.percentage=n=>`${(n*100).toFixed(1)}%`;
 f.bytes=n=>`${f(n)} B`;
-f.date=(timestamp,{time=true,date=true,timeZone='America/Toronto'}={})=>new Intl.DateTimeFormat('en-US',{
-  ...(date?{year:'numeric',month:'short',day:'numeric'}:{}),
-  ...(time?{hour:'2-digit',minute:'2-digit',hour12:false,timeZoneName:'short'}:{}),timeZone,
-}).format(new Date(timestamp));
+f.date=(timestamp,{timeZone='America/Toronto'}={})=>stamp(timestamp,timeZone);
+const fontCss=await fontFaces(path.join(root,'fonts'));
 const browserCandidates=[process.env.PUPPETEER_EXECUTABLE_PATH,process.env.PUPPETEER_BROWSER_PATH,'C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','/usr/bin/google-chrome','/usr/bin/google-chrome-stable','/usr/bin/chromium','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].filter(Boolean);
 let executablePath;
 for(const candidate of browserCandidates) {
@@ -131,20 +130,37 @@ for(const candidate of browserCandidates) {
 }
 if(!executablePath) throw new Error('Chrome was not found. Set PUPPETEER_EXECUTABLE_PATH.');
 const browser=await puppeteer.launch({executablePath,headless:true,args:['--no-sandbox','--disable-extensions']});
-const generated=[];
+const generated=[], rendered=[];
+// Cards shown side by side in README.md get one common frame height.
+const PAIRS=[['isocalendar','languages'],['activity','traffic']];
 try {
  for(const mode of ['light','dark']) {
-  const color=mode==='dark'?'#b1bac4':'#59636e', accent=mode==='dark'?'#58a6ff':'#0969da';
-  const extrasCss=`svg { color: ${color}; } .items-wrapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; } h1, h2, h3 { color: ${accent}; } h2 { line-height: 24px; } h3 { line-height: 20px; } .field svg { fill: ${color}; } .field.language.details small { color: ${color}; font-size: 12px; line-height: 20px; } .activity .details, .activity .timestamp { color: ${color}; } .activity .repo, .activity .issue, .activity .commit .sha { color: ${accent}; } .activity .field { white-space: normal; align-items: flex-start; } .activity .field svg { margin-top: 2px; } .activity .content { overflow-wrap: anywhere; } .activity .timestamp { font-size: 11px; line-height: 16px; }`;
+
   for(const [name,data] of [['isocalendar',iso],['languages',lang],['activity',activity],['traffic',traffic]]) {
-    const themedData=name==='isocalendar'&&mode==='dark'?{...data,svg:data.svg.replaceAll('#ebedf0','#161b22').replaceAll('#9be9a8','#0e4429').replaceAll('#40c463','#006d32').replaceAll('#30a14e','#26a641').replaceAll('#216e39','#39d353')}:data;
-    const context={large:false,columns:false,animated:false,fonts:'',style:css,extras:{css:extrasCss},warnings:[],partials:[name],base:{metadata:false},plugins:{[name]:themedData},account:'user',user:{login},config:{timezone:{name:'America/Toronto'}},s:n=>n===1?'':'s',f};
-    const markup=(await ejs.render(image,context,{
+    const themedData=name==='isocalendar'?{...data,svg:recolorIso(data.svg,mode)}
+      :name==='languages'?{...data,favorites:data.favorites.map((l,i)=>({...l,color:LANGUAGE_RAMP[mode][Math.min(i,LANGUAGE_RAMP[mode].length-1)]}))}:data;
+    const extrasCss=cardCss(name,mode);
+    const context={large:false,columns:false,animated:false,fonts:fontCss,style:css,extras:{css:extrasCss},warnings:[],partials:[name],base:{metadata:false},plugins:{[name]:themedData},account:'user',user:{login},config:{timezone:{name:'America/Toronto'}},s:n=>n===1?'':'s',f};
+    const raw=(await ejs.render(image,context,{
       async:true,filename:path.join(upstream,'source/templates/classic/image.svg'),
       includer:(originalPath,parsedPath)=>originalPath==='partials/activity.ejs'
         ?{filename:parsedPath,template:activityPartial}
         :{filename:originalPath==='partials/traffic.ejs'?path.join(root,'templates/traffic.ejs'):parsedPath},
     })).replaceAll('Commits streaks','Contribution streaks').replaceAll('Commits per day','Contributions per day');
+    let markup=raw;
+    if(HEADINGS[name]) markup=retitle(markup,HEADINGS[name](data));
+    if(name==='isocalendar') {
+      markup=once(markup,/(Best streak) (\d+) (days?)/g,'$1<b>$2</b><small>$3</small>').replace(/(Current streak) (\d+) (days?)/,'$1<b>$2</b><small>$3</small>');
+      markup=once(markup,/Highest in a day at (\d+)/g,'Highest in a day<b>$1</b>');
+      markup=once(markup,/Average per day at ~([\d.]+)/g,'Average per day<b>~$1</b>');
+    }
+    if(name==='languages') {
+      markup=once(markup,'fill="white" rx="5"','fill="white" rx="0"');
+      // Legend dots become the website's square bullets.
+      const dot='d="M8 4a4 4 0 100 8 4 4 0 000-8z"';
+      if(!markup.includes(dot)) throw new Error('Upstream language legend changed');
+      markup=markup.replaceAll(dot,'d="M4.5 4.5h7v7h-7z"');
+    }
     const page=await browser.newPage();
     await page.setViewport({width:500,height:800,deviceScaleFactor:2});
     // Generated markup is local; stop all external resource requests while rendering.
@@ -152,18 +168,30 @@ try {
     page.on('request',request=>request.abort());
     await page.setContent(markup,{waitUntil:'load'});
     await page.addStyleTag({content:`body{margin:0;padding:0;background:${mode==='dark'?'#0d1117':'#ffffff'}}`});
-    const svg=await page.evaluate(()=>{
+    const fontsOk=await page.evaluate(async()=>{const specs=['500 12px RLSans','600 12px RLSans','700 12px RLSans','400 12px RLMono','500 12px RLMono','500 12px RLZh'];await Promise.all(specs.map(f=>document.fonts.load(f,f.includes('RLZh')?'近':'A')));await document.fonts.ready;return specs.every(f=>document.fonts.check(f,f.includes('RLZh')?'近':'A'))&&[...document.fonts].every(f=>f.status==='loaded');});
+    if(!fontsOk) throw new Error('Embedded card fonts did not load');
+    const natural=await page.evaluate(()=>Math.ceil(document.querySelector('#metrics-end').getBoundingClientRect().y)+20);
+    rendered.push({page,name,mode,natural});
+  }
+ }
+ for(const item of rendered) {
+    const {page,name,mode}=item;
+    const pair=PAIRS.find(p=>p.includes(name))||[name];
+    const target=Math.max(...rendered.filter(r=>r.mode===mode&&pair.includes(r.name)).map(r=>r.natural));
+    const svg=await page.evaluate(target=>{
+      document.querySelector('.items-wrapper').style.minHeight=`${target-20}px`;
       const node=document.querySelector('svg');
       // Explicit line heights above keep Linux/Windows layout stable. Extra space
       // protects the last row against browser/font rounding in embedded SVGs.
       const height=Math.ceil(document.querySelector('#metrics-end').getBoundingClientRect().y)+20;
+      if(height!==target) throw new Error(`Card height ${height} != pair height ${target}`);
       node.setAttribute('height',height);
       node.setAttribute('viewBox',`0 0 480 ${height}`);
       node.setAttribute('preserveAspectRatio','xMinYMin meet');
       node.setAttribute('role','img');
-      node.setAttribute('aria-label',document.querySelector('h2')?.textContent.trim()||'GitHub metrics');
+      node.setAttribute('aria-label',(document.querySelector('h2 .tag')||document.querySelector('h2'))?.textContent.trim()||'GitHub metrics');
       return node.outerHTML;
-    });
+    },target);
     const dataNotice=name==='traffic'?'Data: authenticated analytics for selected public repositories; capture date shown in card.':'Data: public GitHub pages/API only; calendar fetched anonymously.';
     const notice=`<!-- Generated from lowlighter/metrics @ ${revision}, MIT license. ${dataNotice} -->\n`;
     const assetName=name==='languages'?'languages-card':name;
@@ -174,7 +202,6 @@ try {
     if(process.env.METRICS_SCREENSHOTS==='1') await page.screenshot({path:path.join(output,`${name}-${mode}.png`),omitBackground:false});
     await page.close();
     console.log(JSON.stringify({file:out,width:480,height:h}));
-  }
  }
 } finally {await browser.close();}
 // Do not overwrite any existing SVG until all source data and all renders succeed.
