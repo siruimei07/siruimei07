@@ -2,36 +2,36 @@
   "version": 1,
   "assets": {
     "isocalendar-light.svg": {
-      "current": "isocalendar-light.8dc0f08906d38d61.svg",
-      "previous": "isocalendar-light.af8f55544d4aa577.svg"
+      "current": "isocalendar-light.4743fd7f2d7c9bbd.svg",
+      "previous": "isocalendar-light.8dc0f08906d38d61.svg"
     },
     "isocalendar-dark.svg": {
-      "current": "isocalendar-dark.4fd104c38025133f.svg",
-      "previous": "isocalendar-dark.09a3c05218af36be.svg"
+      "current": "isocalendar-dark.da051b09e72c1393.svg",
+      "previous": "isocalendar-dark.4fd104c38025133f.svg"
     },
     "languages-card-light.svg": {
-      "current": "languages-card-light.2b68708a08626958.svg",
-      "previous": "languages-card-light.b35c638a0581debf.svg"
+      "current": "languages-card-light.13c11042fa8f918f.svg",
+      "previous": "languages-card-light.2b68708a08626958.svg"
     },
     "languages-card-dark.svg": {
-      "current": "languages-card-dark.559c17c390dc418f.svg",
-      "previous": "languages-card-dark.b58b7a21dacefe43.svg"
+      "current": "languages-card-dark.9d720271e661e5d7.svg",
+      "previous": "languages-card-dark.559c17c390dc418f.svg"
     },
     "activity-light.svg": {
-      "current": "activity-light.5333d382f28aed5e.svg",
-      "previous": "activity-light.a9987e8afa771d95.svg"
+      "current": "activity-light.83c2050b18a5aed3.svg",
+      "previous": "activity-light.5333d382f28aed5e.svg"
     },
     "activity-dark.svg": {
-      "current": "activity-dark.4a7deacbb75ceb0e.svg",
-      "previous": "activity-dark.2b1b7f10433e42be.svg"
+      "current": "activity-dark.4b1a9026f65b994a.svg",
+      "previous": "activity-dark.4a7deacbb75ceb0e.svg"
     },
     "traffic-light.svg": {
-      "current": "traffic-light.639b420c1069a92c.svg",
-      "previous": "traffic-light.099c88b0eea9e4a9.svg"
+      "current": "traffic-light.7a24604ad3c4020c.svg",
+      "previous": "traffic-light.639b420c1069a92c.svg"
     },
     "traffic-dark.svg": {
-      "current": "traffic-dark.ebd7697370727d60.svg",
-      "previous": "traffic-dark.ffd876c7892c11ed.svg"
+      "current": "traffic-dark.ec8b7054c1079c48.svg",
+      "previous": "traffic-dark.ebd7697370727d60.svg"
     }
   }
 }

@@ -33,22 +33,22 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.4fd104c38025133f.svg" />
-    <img src="./assets/metrics/isocalendar-light.8dc0f08906d38d61.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.da051b09e72c1393.svg" />
+    <img src="./assets/metrics/isocalendar-light.4743fd7f2d7c9bbd.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.559c17c390dc418f.svg" />
-    <img src="./assets/metrics/languages-card-light.2b68708a08626958.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.9d720271e661e5d7.svg" />
+    <img src="./assets/metrics/languages-card-light.13c11042fa8f918f.svg" width="49%" align="top" alt="Language distribution across my public original repositories, excluding forks and this profile repository." />
   </picture>
 </p>
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.4a7deacbb75ceb0e.svg" />
-    <img src="./assets/metrics/activity-light.5333d382f28aed5e.svg" width="49%" align="top" alt="Recent public events: up to five GitHub activities from the last 30 days, with Toronto timestamps." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.4b1a9026f65b994a.svg" />
+    <img src="./assets/metrics/activity-light.83c2050b18a5aed3.svg" width="49%" align="top" alt="Recent public events: up to five GitHub activities from the last 30 days, with Toronto timestamps." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.ebd7697370727d60.svg" />
-    <img src="./assets/metrics/traffic-light.639b420c1069a92c.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.ec8b7054c1079c48.svg" />
+    <img src="./assets/metrics/traffic-light.7a24604ad3c4020c.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>
