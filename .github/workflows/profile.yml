@@ -60,7 +60,7 @@ jobs:
       - name: Build profile loading animation
         run: python scripts/build_loading.py
 
-      - name: Build section headers and buttons
+      - name: Build section headers
         run: python scripts/build_sections.py
 
       - name: Build banner

@@ -1,8 +1,7 @@
 """Shared drawing kit for the profile's Rhine Lab images.
 
-The palette, type and the ∞± mark follow the owner's website
-(siruimei07/siruimei07.github.io, src/styles/tokens.css and src/markup.ts), so
-the README reads as the same archive. Only Pillow and the bundled OFL fonts are
+The ∞± mark, type and section-header palette follow the owner's website
+(siruimei07/siruimei07.github.io, src/markup.ts and src/styles/tokens.css). Only Pillow and the bundled OFL fonts are
 required; see banners/fonts/README.md for sources and checksums.
 """
 
@@ -17,8 +16,8 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 FONT_DIR = ROOT / "banners" / "fonts"
 
-# Website tokens (tokens.css). "paper" is the website background; "page" is the
-# GitHub page colour that transparent images sit on.
+# Website tokens (tokens.css), used by the section headers. The opening panel keeps
+# its own quiet palette (build_loading.THEMES).
 THEMES = {
     "light": {
         "paper": (232, 229, 225), "paper_hi": (241, 239, 236), "paper_lo": (220, 216, 210),
@@ -41,10 +40,11 @@ THEMES = {
 }
 
 FONTS = {
+    "barlow-400": "Barlow-Regular.ttf",
+    "barlow-600": "Barlow-SemiBold.ttf",
     "sans": "Montserrat[wght].ttf",
     "mono": "JetBrainsMono[wght].ttf",
-    "zh-500": "noto-sans-sc-500.woff2",
-    "zh-700": "noto-sans-sc-700.woff2",
+    "zh": "noto-sans-sc-500.woff2",
 }
 
 # ∞ with + and −, in the website's 310 × 145 mark space (src/markup.ts, adapted
@@ -174,10 +174,12 @@ def contour_points() -> tuple[tuple[float, float], ...]:
 
 @lru_cache(maxsize=256)
 def font(family: str, weight: int, size: float) -> ImageFont.FreeTypeFont:
-    """Montserrat and JetBrains Mono are variable fonts; Noto Sans SC is a static subset."""
-    if family == "zh":
-        face = ImageFont.truetype(str(FONT_DIR / FONTS["zh-700" if weight >= 600 else "zh-500"]), size)
-        return face
+    """Montserrat and JetBrains Mono are variable fonts; Barlow (regular, semibold) and the
+    Noto Sans SC subset (medium) are static files."""
+    static = {"barlow": ("barlow-400", "barlow-600"), "zh": ("zh", "zh")}
+    if family in static:
+        regular, bold = static[family]
+        return ImageFont.truetype(str(FONT_DIR / FONTS[bold if weight >= 600 else regular]), size)
     face = ImageFont.truetype(str(FONT_DIR / FONTS[family]), size)
     face.set_variation_by_axes([weight])
     return face
@@ -254,10 +256,6 @@ class Canvas:
             x0 = left
         self.image.alpha_composite(layer, (x0, y0))
 
-    def paste(self, image: Image.Image) -> None:
-        """Lay a prepared full-size RGBA layer (e.g. a cached background) over the canvas."""
-        self.image.alpha_composite(image)
-
     def rect(self, x0, y0, x1, y1, role="ink", opacity=1.0):
         s = self.scale
         left, top, right, bottom = round(x0 * s), round(y0 * s), round(x1 * s), round(y1 * s)
@@ -265,11 +263,6 @@ class Canvas:
             return
         self._layer((x0, y0, x1, y1), lambda d, c, ox, oy: d.rectangle(
             (left - ox, top - oy, right - ox - 1, bottom - oy - 1), fill=c), role, opacity)
-
-    def frame(self, x0, y0, x1, y1, width=1.0, role="ink", opacity=1.0):
-        for box in ((x0, y0, x1, y0 + width), (x0, y1 - width, x1, y1),
-                    (x0, y0 + width, x0 + width, y1 - width), (x1 - width, y0 + width, x1, y1 - width)):
-            self.rect(*box, role=role, opacity=opacity)
 
     def line(self, points, width=1.0, role="ink", opacity=1.0, caps=False):
         points = list(points)
@@ -296,14 +289,6 @@ class Canvas:
 
         self._layer(box, draw, role, opacity)
 
-    def polygon(self, points, role="ink", opacity=1.0):
-        points = list(points)
-        s = self.scale
-        box = (min(p[0] for p in points), min(p[1] for p in points),
-               max(p[0] for p in points), max(p[1] for p in points))
-        self._layer(box, lambda d, c, ox, oy: d.polygon([(x * s - ox, y * s - oy) for x, y in points], fill=c),
-                    role, opacity)
-
     def dot(self, x, y, radius, role="ink", opacity=1.0):
         if radius <= 0:
             return
@@ -312,16 +297,6 @@ class Canvas:
                     lambda d, c, ox, oy: d.ellipse((
                         (x - radius) * s - ox, (y - radius) * s - oy,
                         (x + radius) * s - ox, (y + radius) * s - oy), fill=c), role, opacity)
-
-    def ring(self, x, y, radius, width=1.0, role="ink", opacity=1.0):
-        if radius <= 0:
-            return
-        s = self.scale
-        self._layer((x - radius - width, y - radius - width, x + radius + width, y + radius + width),
-                    lambda d, c, ox, oy: d.ellipse((
-                        (x - radius) * s - ox, (y - radius) * s - oy,
-                        (x + radius) * s - ox, (y + radius) * s - oy),
-                        outline=c, width=max(1, round(width * s))), role, opacity)
 
     def arc(self, x, y, radius, start, sweep, width=1.0, role="ink", opacity=1.0, caps=False):
         """Arc from `start` degrees (clockwise on screen) through `sweep` degrees."""
@@ -344,11 +319,8 @@ class Canvas:
         return total + tracking * max(0, count - 1)
 
     def text(self, value, x, y, size, weight=500, tracking=0.0, align="left", role="ink",
-             opacity=1.0, family="sans", anchor="ls", stroke=0.0):
-        """Draw `value` with letter-spacing. `y` is the baseline unless anchor says otherwise.
-
-        `stroke` thickens every glyph outline (design px), e.g. for a halo drawn underneath.
-        """
+             opacity=1.0, family="sans", anchor="ls"):
+        """Draw `value` with letter-spacing. `y` is the baseline unless anchor says otherwise."""
         if not value or opacity <= 0:
             return 0.0
         width = self.measure(value, size, weight, tracking, family)
@@ -369,68 +341,33 @@ class Canvas:
                 glyphs.append((face, character, cursor + offset))
             cursor += _prefix(fam, weight, size * s, run) / s + tracking * len(run)
         ascent = size * 1.1
-        box = (x - 2 - stroke, y - ascent - 2 - stroke, x + width + 4 + stroke, y + size * 0.45 + 2 + stroke)
+        box = (x - 2, y - ascent - 2, x + width + 4, y + size * 0.45 + 2)
         if anchor == "lt":
-            box = (x - 2 - stroke, y - 2 - stroke, x + width + 4 + stroke, y + size * 1.5 + 2 + stroke)
-        outline = round(stroke * s)
+            box = (x - 2, y - 2, x + width + 4, y + size * 1.5 + 2)
 
         def draw(d, c, ox, oy):
             for face, character, gx in glyphs:
-                d.text((gx * s - ox, y * s - oy), character, font=face, fill=c, anchor=anchor,
-                       stroke_width=outline, stroke_fill=c)
+                d.text((gx * s - ox, y * s - oy), character, font=face, fill=c, anchor=anchor)
 
         self._layer(box, draw, role, opacity)
         return width
 
     # ── motifs ────────────────────────────────────────────────────────────
 
-    def mark(self, x, y, width, role="ink", opacity=1.0, reveal=1.0, signs=1.0, plus=None, minus=None):
-        """The ∞± mark with its top-left at (x, y), `width` design px wide.
-
-        `reveal` draws the single contour in (the opening's stroke-in);
-        `signs` scales the + and − in from the crossing.
-        """
+    def mark(self, x, y, width, role="ink", opacity=1.0):
+        """The website's ∞± mark (markup.ts mark()) with its top-left at (x, y), `width` px wide."""
         k = width / MARK_SIZE[0]
-        if reveal >= 1:
-            for loop in path_points(MARK_LOOPS):
-                self.line([(x + px * k, y + py * k) for px, py in loop], 26 * k, role, opacity)
-        elif reveal > 0:
-            points = contour_points()
-            lengths = [math.dist(a, b) for a, b in zip(points, points[1:])]
-            target = sum(lengths) * reveal
-            visible, travelled = [points[0]], 0.0
-            for point, length in zip(points[1:], lengths):
-                if travelled + length >= target:
-                    t = (target - travelled) / length if length else 0
-                    previous = visible[-1]
-                    visible.append((mix(previous[0], point[0], t), mix(previous[1], point[1], t)))
-                    break
-                travelled += length
-                visible.append(point)
-            self.line([(x + px * k, y + py * k) for px, py in visible], 26 * k, role, opacity, caps=True)
-        plus = signs if plus is None else plus
-        minus = signs if minus is None else minus
-        if plus > 0:
-            arm = 25 * plus
-            cx, cy = 69, 70
-            self.line([(x + (cx - arm) * k, y + cy * k), (x + (cx + arm) * k, y + cy * k)], 15 * k, role, opacity)
-            self.line([(x + cx * k, y + (cy - arm) * k), (x + cx * k, y + (cy + arm) * k)], 15 * k, role, opacity)
-        if minus > 0:
-            arm = 22 * minus
-            cx, cy = 241, 70
-            self.line([(x + (cx - arm) * k, y + cy * k), (x + (cx + arm) * k, y + cy * k)], 15 * k, role, opacity)
+        for path, stroke in ((MARK_LOOPS, 26), (MARK_SIGNS, 15)):
+            for points in path_points(path):
+                self.line([(x + px * k, y + py * k) for px, py in points], stroke * k, role, opacity)
 
     def tag(self, value, x, y, size=12, weight=700, tracking=0.6, pad_x=7, height=None,
-            role="tag", ink="tag_ink", opacity=1.0, outline=False, family="sans", tail=0.0):
+            role="tag", ink="tag_ink", opacity=1.0, family="sans", tail=0.0):
         """Black label tag: (x, y) is its top-left; `tail` is extra empty plate on the right
         (the website's SECTION 0X. tags). Returns the tag width."""
         height = height or round(size * 1.65)
         width = self.measure(value, size, weight, tracking, family) + 2 * pad_x + tail
-        if outline:
-            self.frame(x, y, x + width, y + height, 1.5, role, opacity)
-            ink = role
-        else:
-            self.rect(x, y, x + width, y + height, role, opacity)
+        self.rect(x, y, x + width, y + height, role, opacity)
         self.text(value, x + pad_x, y + height / 2 + size * 0.36, size, weight, tracking, role=ink,
                   opacity=opacity, family=family)
         return width
@@ -439,23 +376,6 @@ class Canvas:
         """The callouts' ⌜ bracket."""
         self.rect(x, y, x + length, y + width, role, opacity)
         self.rect(x, y + width, x + width, y + length, role, opacity)
-
-    def dna(self, ax, ay, bx, by, amp, period, phase, role="ghost", opacity=0.5, width=6, rung=2.0):
-        """One double helix along a→b (the website's boot__dna): two strands and their rungs."""
-        length = math.hypot(bx - ax, by - ay)
-        ux, uy = (bx - ax) / length, (by - ay) / length
-        nx, ny = -uy, ux
-
-        def at(t, side, k=1.0):
-            o = side * amp * k * math.sin(t / period * math.pi * 2 + phase)
-            return ax + ux * t + nx * o, ay + uy * t + ny * o
-
-        for side in (1, -1):
-            self.line([at(t, side) for t in range(0, int(length) + 8, 8)], width, role, opacity)
-        t = period / 20
-        while t < length:
-            self.line([at(t, 1, 0.8), at(t, -1, 0.8)], rung, role, opacity * 0.8)
-            t += period / 10
 
     def result(self, density: int = 1) -> Image.Image:
         """Downsample to `density` output pixels per design pixel (2 for crisp README art)."""

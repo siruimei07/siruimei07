@@ -8,13 +8,10 @@
       "src/boot/logo-track.ts",
       "src/boot/orbit-track.ts",
       "src/boot/boot.ts",
-      "src/boot/markup.ts",
-      "src/styles/boot.css",
-      "src/styles/tokens.css",
       "src/markup.ts",
       "src/content.ts"
     ],
-    "notes": "Timeline, measured tracks, geometry, copy and palette of the website's opening; ported to scripts/boot_tracks.py and scripts/build_loading.py."
+    "notes": "Timeline, measured tracks and copy of the website's opening; ported to scripts/boot_tracks.py and scripts/build_loading.py."
   },
   "animation_reference": {
     "repository": "https://github.com/LBEILC/RhineLabUI",

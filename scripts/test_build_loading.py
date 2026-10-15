@@ -14,15 +14,9 @@ SMALL_CONFIG = {
     "width": 640,
     "height": 160,
     "fps": 10,
-    "duration_ms": 14000,
+    "duration_ms": 13000,
     "profile_name": "SIRUI MEI",
     "subtitle": "PERSONAL DATABASE",
-    "tagline": "SYNTHESIZE INFORMATION",
-    "rank": "UNDERGRADUATE",
-    "affiliation": "UNIVERSITY OF TORONTO",
-    "focus": ["STATISTICS", "ECONOMICS", "QUANT"],
-    "code": "PRSN-001",
-    "captions": ["需要访问权限", "身份确认：访客", "读取完毕，核验通过", "欢迎访问 Sirui Mei 的个人资料档案"],
 }
 
 
@@ -85,17 +79,7 @@ class LoadingConfigTests(unittest.TestCase):
 
     def test_rejects_a_duration_that_cuts_the_motion_short(self):
         with self.assertRaisesRegex(ValueError, "finish the motion"):
-            self.load({**SMALL_CONFIG, "duration_ms": 12000})
-
-    def test_rejects_bad_focus_and_captions(self):
-        for value in (None, [], ["A"] * 5, ["统计"], ["X" * 15], "STATISTICS"):
-            with self.subTest(focus=value), self.assertRaisesRegex(ValueError, "focus"):
-                self.load({**SMALL_CONFIG, "focus": value})
-        for value in (None, ["一"] * 3, ["一"] * 5, ["一" * 31] * 4, [""] * 4):
-            with self.subTest(captions=value), self.assertRaisesRegex(ValueError, "captions"):
-                self.load({**SMALL_CONFIG, "captions": value})
-        with self.assertRaisesRegex(ValueError, "missing"):
-            self.load({**SMALL_CONFIG, "captions": ["鑫"] * 4})
+            self.load({**SMALL_CONFIG, "duration_ms": 12500})
 
     def test_rejects_non_object_configuration(self):
         for value in (None, [], True, "config"):
@@ -126,8 +110,8 @@ class LoadingConfigTests(unittest.TestCase):
                     self.load({**SMALL_CONFIG, "width": width, "height": height})
 
     def test_rejects_missing_empty_non_ascii_and_overlong_text(self):
-        for name in ("profile_name", "subtitle", "tagline", "rank", "affiliation", "code"):
-            for value in (None, True, 123, "", "   ", "A" * 29, "档案"):
+        for name in ("profile_name", "subtitle"):
+            for value in (None, True, 123, "", "   ", "A" * 25, "档案"):
                 with self.subTest(name=name, value=value):
                     with self.assertRaisesRegex(ValueError, name):
                         self.load({**SMALL_CONFIG, name: value})

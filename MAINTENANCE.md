@@ -4,19 +4,19 @@ This repository powers [siruimei07's GitHub profile](https://github.com/siruimei
 
 ## Design system
 
-The README matches the owner's website, [siruimei07.github.io](https://github.com/siruimei07/siruimei07.github.io), a Rhine Lab-style "Analysis OS". `scripts/rhine.py` holds the shared kit: the website's palette tokens (light and dark), Montserrat / JetBrains Mono / Noto Sans SC from `banners/fonts/`, the ∞± mark, black tags, corner brackets and the DNA helices. Every drawing is supersampled and composited through its own alpha layer, so transparent images blend cleanly into either GitHub theme.
+The README matches the owner's website, [siruimei07.github.io](https://github.com/siruimei07/siruimei07.github.io), a Rhine Lab-style "Analysis OS". `scripts/rhine.py` holds the shared drawing kit: the website's palette tokens for the section headers, the fonts in `banners/fonts/`, the ∞± mark, black tags and corner brackets. Every drawing is supersampled and composited through its own alpha layer, so transparent images blend cleanly into either GitHub theme.
 
 ## Opening panel
 
-The panel at the top replays the website's opening (`src/boot/` there) using its measured tracks, ported to `scripts/boot_tracks.py`: ACCESS PERMISSION REQUIRED, the ∞± mark drawn along one contour, the corner lockup, `ID CONFIRMED : VISITOR` / `REQUEST RECEIVED` / `START PROCESSING...`, the PERMISSION AUTHORIZED rings, a flash cut and `WELCOME TO / SIRUI MEI / PERSONAL DATABASE`. Pauses are shortened so the motion ends after about 13.3 seconds. A README image cannot exit into the website's overview, so the APNG plays once and holds a still that adds the website's identity block (UNDERGRADUATE · UNIVERSITY OF TORONTO · STATISTICS · ECONOMICS · QUANT) and the personnel file number. Light and dark versions follow the visitor's color scheme; reduced-motion preferences select the still.
+The panel above the image banner plays once for about 13 seconds and holds the `WELCOME TO / SIRUI MEI / PERSONAL DATABASE` frame. Its motion follows the website's opening (`src/boot/` there), using the measured tracks ported to `scripts/boot_tracks.py`: ACCESS PERMISSION REQUIRED typed in bursts, the ∞± mark drawn along one contour, `ID CONFIRMED : VISITOR` / `REQUEST RECEIVED` / `START PROCESSING...`, and the PERMISSION AUTHORIZED rings. Pauses are shortened to fit a README visit. The panel itself stays minimal: flat paper, two faint ∞ outlines, the name in Barlow without a bar. Light and dark versions follow the visitor's color scheme; reduced-motion preferences select the still.
 
 The sequence is a decorative introduction; it does not check identity or authenticate access.
 
-Settings are in `banners/loading/config.json` (see [its README](banners/loading/README.md)). `scripts/build_loading.py` writes `assets/loading-light.png`, `assets/loading-dark.png`, `assets/loading-static-light.png`, and `assets/loading-static-dark.png`; optional `--config` and `--output-dir` arguments support alternate settings and output folders. Each theme's frames share one 256-color palette that reserves the theme colors and their anti-aliasing ramps, which keeps each APNG under 5 MB.
+Settings are in `banners/loading/config.json` (see [its README](banners/loading/README.md)). `scripts/build_loading.py` writes `assets/loading-light.png`, `assets/loading-dark.png`, `assets/loading-static-light.png`, and `assets/loading-static-dark.png`; optional `--config` and `--output-dir` arguments support alternate settings and output folders. Each theme's frames share one 256-color palette that reserves the panel colors and their anti-aliasing ramps.
 
-## Section headers and buttons
+## Section headers
 
-`scripts/build_sections.py` renders the README's section headers (the website's home callouts) and the ANALYSIS OS and MAIL link buttons (`.btn`) from `banners/sections/config.json` into `assets/sections/`, as transparent 2x PNGs in light and dark versions. See [its README](banners/sections/README.md).
+`scripts/build_sections.py` renders the README's section headers (the website's home callouts) from `banners/sections/config.json` into `assets/sections/`, as transparent 2x PNGs in light and dark versions. See [its README](banners/sections/README.md).
 
 ## Banners
 
@@ -28,7 +28,7 @@ The default is a transparent APNG slideshow with a 5-second interval and a shuff
 
 [Update profile](https://github.com/siruimei07/siruimei07/actions/workflows/profile.yml) runs daily at 10:17 UTC, on relevant pushes, or manually. Its optional `banner` input saves a new banner selection; leave it empty to keep the current setting.
 
-The workflow runs the Python and Node checks, builds the opening panel, section headers, buttons and banners, refreshes the public repository table, and renders the Metrics charts. Calendar, languages, activity, and the repository list use public data with the automatically supplied repository `GITHUB_TOKEN`. Traffic uses an optional `TRAFFIC_TOKEN` secret because GitHub restricts analytics to people with repository access.
+The workflow runs the Python and Node checks, builds the opening panel, section headers and banners, refreshes the public repository table, and renders the Metrics charts. Calendar, languages, activity, and the repository list use public data with the automatically supplied repository `GITHUB_TOKEN`. Traffic uses an optional `TRAFFIC_TOKEN` secret because GitHub restricts analytics to people with repository access.
 
 ## Metrics
 

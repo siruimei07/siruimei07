@@ -1,13 +1,12 @@
-"""Render the README's section headers and link buttons as theme-aware PNGs.
+"""Render the README's section headers as theme-aware PNGs.
 
-They reuse the website's callout and button motifs (see scripts/rhine.py)
+They reuse the website's home-screen callouts (see scripts/rhine.py)
 so every part of the profile reads as one Rhine Lab archive. Images are drawn
 on a transparent background at 2x and blend into GitHub's light or dark page.
 """
 
 import argparse
 import json
-import math
 from pathlib import Path
 import re
 
@@ -16,7 +15,6 @@ from rhine import THEMES, Canvas, require_glyphs
 
 ROOT = Path(__file__).resolve().parents[1]
 HEADER_SIZE = (1280, 172)
-BUTTON_HEIGHT = 40
 # Drawn at 4x and stored at 2x: crisp on high-density screens, smooth edges.
 SUPERSAMPLE, DENSITY = 4, 2
 ID_PATTERN = re.compile(r"[a-z][a-z0-9-]{0,23}")
@@ -33,33 +31,24 @@ def read_config(path: Path) -> dict:
     config = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(config, dict):
         raise ValueError("section config must be an object")
+    items = config.get("headers")
+    if not isinstance(items, list) or not items:
+        raise ValueError("headers must be a non-empty list")
     seen = set()
-    for kind, required in (("headers", ("number", "title", "description", "code")),
-                           ("buttons", ("label", "handle"))):
-        items = config.get(kind)
-        if not isinstance(items, list) or not items:
-            raise ValueError(f"{kind} must be a non-empty list")
-        for item in items:
-            if not isinstance(item, dict) or not isinstance(item.get("id"), str) \
-                    or not ID_PATTERN.fullmatch(item["id"]):
-                raise ValueError(f"every entry in {kind} needs an id of lowercase letters, digits and hyphens")
-            if (kind, item["id"]) in seen:
-                raise ValueError(f"duplicate {kind} id: {item['id']}")
-            seen.add((kind, item["id"]))
-            for name in required:
-                ascii_text(item.get(name), f"{kind}.{item['id']}.{name}", 40 if name == "title" else 32)
-        if kind == "headers":
-            for item in items:
-                if not re.fullmatch(r"\d{2}", item["number"]):
-                    raise ValueError(f"headers.{item['id']}.number must be two digits")
-                zh = item.get("zh", "")
-                if not isinstance(zh, str) or len(zh) > 16:
-                    raise ValueError(f"headers.{item['id']}.zh must be a string of at most 16 characters")
-                require_glyphs(zh)
-        else:
-            for item in items:
-                if item.get("style") not in ("filled", "outline"):
-                    raise ValueError(f"buttons.{item['id']}.style must be filled or outline")
+    for item in items:
+        if not isinstance(item, dict) or not isinstance(item.get("id"), str) or not ID_PATTERN.fullmatch(item["id"]):
+            raise ValueError("every header needs an id of lowercase letters, digits and hyphens")
+        if item["id"] in seen:
+            raise ValueError(f"duplicate header id: {item['id']}")
+        seen.add(item["id"])
+        for name in ("number", "title", "description", "code"):
+            ascii_text(item.get(name), f"headers.{item['id']}.{name}", 40 if name == "title" else 32)
+        if not re.fullmatch(r"\d{2}", item["number"]):
+            raise ValueError(f"headers.{item['id']}.number must be two digits")
+        zh = item.get("zh", "")
+        if not isinstance(zh, str) or len(zh) > 16:
+            raise ValueError(f"headers.{item['id']}.zh must be a string of at most 16 characters")
+        require_glyphs(zh)
     return config
 
 
@@ -107,39 +96,13 @@ def header(item: dict, theme: str) -> Canvas:
     return c
 
 
-def button_width(item: dict) -> int:
-    probe = Canvas(10, 10, "light", scale=1, background=None)
-    label = probe.measure(item["label"], 14, 700, 1.4)
-    handle = probe.measure(item["handle"], 13, 500, 0.52)
-    return math.ceil(13.3 + 7 + 9.8 + label + 9.8 + handle + 16.1)
-
-
-def button(item: dict, theme: str) -> Canvas:
-    """The website's .btn: ■ LABEL plus its handle at 70%; filled ink or a 2 px ink outline."""
-    width, height = button_width(item), BUTTON_HEIGHT
-    c = Canvas(width, height, theme, scale=SUPERSAMPLE, background=None)
-    filled = item["style"] == "filled"
-    if filled:
-        c.rect(0, 0, width, height, "ink")
-    c.frame(0, 0, width, height, 2, "ink")
-    ink = "paper" if filled else "ink"
-    baseline = height / 2 + 0.36 * 14
-    c.rect(13.3, height / 2 - 3.5, 20.3, height / 2 + 3.5, ink)
-    x = 13.3 + 7 + 9.8
-    x += c.text(item["label"], x, baseline, 14, 700, 1.4, role=ink) + 9.8
-    c.text(item["handle"], x, baseline, 13, 500, 0.52, role=ink, opacity=0.7)
-    return c
-
-
 def build(config: dict, output_dir: Path) -> list[Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
-    jobs = [(f"header-{item['id']}", header, item) for item in config["headers"]]
-    jobs += [(f"button-{item['id']}", button, item) for item in config["buttons"]]
     outputs = []
-    for name, draw, item in jobs:
+    for item in config["headers"]:
         for theme in THEMES:
-            path = output_dir / f"{name}-{theme}.png"
-            draw(item, theme).result(DENSITY).save(path, optimize=True)
+            path = output_dir / f"header-{item['id']}-{theme}.png"
+            header(item, theme).result(DENSITY).save(path, optimize=True)
             outputs.append(path)
     print(f"Built {len(outputs)} section images in {output_dir}")
     return outputs

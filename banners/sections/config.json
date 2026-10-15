@@ -16,19 +16,5 @@
       "zh": "提交、代码量与访问量",
       "code": "LOG-001"
     }
-  ],
-  "buttons": [
-    {
-      "id": "site",
-      "label": "ANALYSIS OS",
-      "handle": "siruimei07.github.io",
-      "style": "filled"
-    },
-    {
-      "id": "mail",
-      "label": "MAIL",
-      "handle": "sirui.mei07@gmail.com",
-      "style": "outline"
-    }
   ]
 }

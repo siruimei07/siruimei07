@@ -1,13 +1,12 @@
 import hashlib
 import json
 from pathlib import Path
-import re
 import tempfile
 import unittest
 
 from PIL import Image
 
-from build_sections import BUTTON_HEIGHT, DENSITY, HEADER_SIZE, build, button_width, read_config
+from build_sections import DENSITY, HEADER_SIZE, build, read_config
 from rhine import FONT_DIR, ROOT, require_glyphs
 
 
@@ -47,17 +46,14 @@ class SectionConfigTests(unittest.TestCase):
     def test_repository_config_is_valid(self):
         self.assertEqual(self.load(self.config), self.config)
 
-    def test_rejects_bad_ids_duplicates_and_styles(self):
+    def test_rejects_bad_ids_duplicates_and_numbers(self):
         cases = []
         bad_id = json.loads(json.dumps(self.config))
         bad_id["headers"][0]["id"] = "../escape"
         cases.append((bad_id, "id"))
         duplicate = json.loads(json.dumps(self.config))
-        duplicate["buttons"].append(dict(duplicate["buttons"][0]))
+        duplicate["headers"].append(dict(duplicate["headers"][0]))
         cases.append((duplicate, "duplicate"))
-        style = json.loads(json.dumps(self.config))
-        style["buttons"][0]["style"] = "ghost"
-        cases.append((style, "style"))
         number = json.loads(json.dumps(self.config))
         number["headers"][0]["number"] = "1"
         cases.append((number, "number"))
@@ -80,14 +76,9 @@ class SectionConfigTests(unittest.TestCase):
 
 
 class ReadmeReferenceTests(unittest.TestCase):
-    def test_readme_shows_every_section_image_at_its_design_size(self):
+    def test_readme_shows_every_section_header_once_per_theme(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         config = read_config(CONFIG_PATH)
-        for item in config["buttons"]:
-            with self.subTest(button=item["id"]):
-                match = re.search(rf'button-{item["id"]}-light\.png" width="(\d+)"', readme)
-                self.assertIsNotNone(match)
-                self.assertEqual(int(match.group(1)), button_width(item))
         for name in [f"header-{item['id']}" for item in config["headers"]]:
             for theme in ("light", "dark"):
                 with self.subTest(image=name, theme=theme):
@@ -100,14 +91,10 @@ class SectionOutputTests(unittest.TestCase):
         temporary = tempfile.TemporaryDirectory(prefix="profile-sections-output-")
         cls.addClassCleanup(temporary.cleanup)
         config = read_config(CONFIG_PATH)
-        cls.filled = {f"button-{item['id']}" for item in config["buttons"] if item["style"] == "filled"}
         cls.first = build(config, Path(temporary.name) / "first")
         cls.second = build(config, Path(temporary.name) / "second")
 
     def test_every_image_has_both_themes_at_double_density(self):
-        config = read_config(CONFIG_PATH)
-        sizes = {"header": HEADER_SIZE}
-        sizes.update({f"button-{item['id']}": (button_width(item), BUTTON_HEIGHT) for item in config["buttons"]})
         names = {path.name for path in self.first}
         for path in self.first:
             with self.subTest(name=path.name):
@@ -115,12 +102,9 @@ class SectionOutputTests(unittest.TestCase):
                 self.assertIn(path.name.replace(path.stem.rsplit("-", 1)[1], other), names)
                 with Image.open(path) as image:
                     self.assertEqual(image.mode, "RGBA")
-                    kind = path.stem.rsplit("-", 1)[0]
-                    width, height = sizes.get(kind) or sizes[kind.split("-", 1)[0]]
-                    self.assertEqual(image.size, (width * DENSITY, height * DENSITY))
-                    # Only the filled button is opaque; the rest blends into either GitHub theme.
-                    lowest = image.getchannel("A").getextrema()[0]
-                    self.assertEqual(lowest, 255 if path.stem.rsplit("-", 1)[0] in self.filled else 0)
+                    self.assertEqual(image.size, (HEADER_SIZE[0] * DENSITY, HEADER_SIZE[1] * DENSITY))
+                    # Transparent around the art, so it blends into either GitHub theme.
+                    self.assertEqual(image.getchannel("A").getextrema()[0], 0)
 
     def test_builds_are_byte_identical(self):
         for first, second in zip(self.first, self.second):

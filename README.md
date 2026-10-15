@@ -2,22 +2,8 @@
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/loading-static-dark.png" />
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/loading-static-light.png" />
   <source media="(prefers-color-scheme: dark)" srcset="./assets/loading-dark.png" />
-  <img src="./assets/loading-light.png" width="100%" alt="SIRUI MEI · ANALYSIS OS. A Rhine Lab-style opening from the personal website plays once: ACCESS PERMISSION REQUIRED, the infinity mark, ID CONFIRMED : VISITOR, PERMISSION AUTHORIZED, then WELCOME TO SIRUI MEI · PERSONAL DATABASE. It settles on UNDERGRADUATE · UNIVERSITY OF TORONTO · STATISTICS · ECONOMICS · QUANT and file PRSN-001." />
+  <img src="./assets/loading-light.png" width="100%" alt="Rhine Lab-style opening from my website: ACCESS PERMISSION REQUIRED, the infinity mark, ID CONFIRMED : VISITOR, PERMISSION AUTHORIZED, then WELCOME TO SIRUI MEI · PERSONAL DATABASE. Plays once at 60 fps." />
 </picture>
-
-多伦多大学本科生，用统计、经济与量化理解世界。<br />
-<sub>Undergraduate at the University of Toronto — statistics, economics &amp; quant.</sub>
-
-<p>
-  <a href="https://siruimei07.github.io/"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/sections/button-site-dark.png" />
-  <img src="./assets/sections/button-site-light.png" width="308" alt="ANALYSIS OS — open the personal website, siruimei07.github.io" />
-</picture></a>
-  <a href="mailto:sirui.mei07@gmail.com"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/sections/button-mail-dark.png" />
-  <img src="./assets/sections/button-mail-light.png" width="264" alt="MAIL — sirui.mei07@gmail.com" />
-</picture></a>
-</p>
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/banner-static.png" />
@@ -66,5 +52,3 @@
     <img src="./assets/metrics/traffic-light.639b420c1069a92c.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>
-
-<sub>Fan-made tribute to Arknights · Rhine Lab, matching <a href="https://siruimei07.github.io/">my website</a>. 「明日方舟」「莱茵生命」及相关名称与标志版权归上海鹰角网络科技有限公司（Hypergryph）所有，本页与官方无关。</sub>
