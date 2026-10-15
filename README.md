@@ -44,11 +44,11 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.4b1a9026f65b994a.svg" />
-    <img src="./assets/metrics/activity-light.83c2050b18a5aed3.svg" width="49%" align="top" alt="Recent public events: up to five GitHub activities from the last 30 days, with Toronto timestamps." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.78f0d633e761a35a.svg" />
+    <img src="./assets/metrics/activity-light.1d04a14583d37d1c.svg" width="49%" align="top" alt="Recent public events: up to five GitHub activities from the last 30 days, with Toronto timestamps." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.ec8b7054c1079c48.svg" />
-    <img src="./assets/metrics/traffic-light.7a24604ad3c4020c.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.574333f3019945e4.svg" />
+    <img src="./assets/metrics/traffic-light.3073e716f1ef2eac.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>
