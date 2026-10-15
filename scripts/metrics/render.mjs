@@ -23,7 +23,7 @@ for(const [relative,expected] of Object.entries(provenance.sha256)) {
   if(actual!==expected) throw new Error(`Vendored file hash mismatch: ${relative}`);
 }
 
-// Public chart endpoints use an optional Actions token for API rate limits.
+// Public API endpoints, including activity enrichment, use an optional Actions token for API rate limits.
 // Calendar pages are anonymous. Traffic authentication is isolated in traffic.mjs.
 async function publicFetch(url,kind='json') {
   const parsed=new URL(url);
@@ -36,7 +36,10 @@ async function publicFetch(url,kind='json') {
     parsed.pathname.startsWith(`/repos/${login}/`)&&parsed.pathname.endsWith('/languages')
   );
   if(parsed.protocol!=='https:'||(!calendarPage&&!enrichment&&!publicApi)) throw new Error('Source endpoint is outside the public allowlist');
-  if(publicApi&&(process.env.GITHUB_TOKEN||process.env.GH_TOKEN)) headers.Authorization=`Bearer ${process.env.GITHUB_TOKEN||process.env.GH_TOKEN}`;
+  // Unauthenticated API calls from shared runners hit the 60-per-hour IP limit (HTTP 403).
+  // The Actions token only reaches api.github.com and cannot see other private repositories,
+  // and activity.mjs still requires private===false, so enrichment stays public-only.
+  if((publicApi||enrichment)&&(process.env.GITHUB_TOKEN||process.env.GH_TOKEN)) headers.Authorization=`Bearer ${process.env.GITHUB_TOKEN||process.env.GH_TOKEN}`;
   for(let attempt=0;attempt<3;attempt++) {
     const response=await fetch(url,{headers,redirect:'error',signal:AbortSignal.timeout(30000)});
     if(response.ok) return kind==='json'?response.json():response.text();
