@@ -1718,68 +1718,68 @@ h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;back
 
 
 <section class="traffic-card">
-  <h2 class="field rl-head"><span class="tag">Repository traffic</span><small class="zh">仓库访问</small><span class="readout">CAPTURED 2026-10-15</span></h2>
+  <h2 class="field rl-head"><span class="tag">Repository traffic</span><small class="zh">仓库访问</small><span class="readout">CAPTURED 2026-10-16</span></h2>
 
-    <div class="t-total"><b>59</b><small>PAGE VIEWS</small></div>
-    <div class="t-sub"><span>Daily reported views · UTC</span><span>Oct 1, 2026 – Oct 14, 2026</span></div>
+    <div class="t-total"><b>64</b><small>PAGE VIEWS</small></div>
+    <div class="t-sub"><span>Daily reported views · UTC</span><span>Oct 2, 2026 – Oct 15, 2026</span></div>
     <svg class="t-chart" xmlns="http://www.w3.org/2000/svg" width="460" height="112" viewBox="0 0 460 112" role="img" aria-label="Daily repository page views">
       <line class="grid" x1="0" x2="460" y1="55" y2="55"></line><line class="grid" x1="0" x2="460" y1="18" y2="18"></line>
 
+        <rect class="bar" x="3.5" y="81.92857142857143" width="25.857142857142854" height="10.071428571428571"><title>2026-10-02: 4 views</title></rect>
 
-
-        <text x="16.428571428571427" y="106" text-anchor="middle">01</text>
-
-        <rect class="bar" x="36.357142857142854" y="81.92857142857143" width="25.857142857142854" height="10.071428571428571"><title>2026-10-02: 4 views</title></rect>
-
-        <text x="49.28571428571428" y="106" text-anchor="middle">02</text>
+        <text x="16.428571428571427" y="106" text-anchor="middle">02</text>
 
 
 
-        <text x="82.14285714285714" y="106" text-anchor="middle">03</text>
+        <text x="49.28571428571428" y="106" text-anchor="middle">03</text>
 
 
 
-        <text x="114.99999999999999" y="106" text-anchor="middle">04</text>
+        <text x="82.14285714285714" y="106" text-anchor="middle">04</text>
 
-        <rect class="bar" x="134.92857142857142" y="79.28571428571429" width="25.857142857142854" height="12.714285714285714"><title>2026-10-05: 5 views</title></rect>
+        <rect class="bar" x="102.07142857142856" y="79.28571428571429" width="25.857142857142854" height="12.714285714285714"><title>2026-10-05: 5 views</title></rect>
 
-        <text x="147.85714285714283" y="106" text-anchor="middle">05</text>
+        <text x="114.99999999999999" y="106" text-anchor="middle">05</text>
 
-        <rect class="bar" x="167.78571428571428" y="87.21428571428571" width="25.857142857142854" height="4.785714285714286"><title>2026-10-06: 2 views</title></rect>
+        <rect class="bar" x="134.92857142857142" y="87.21428571428571" width="25.857142857142854" height="4.785714285714286"><title>2026-10-06: 2 views</title></rect>
 
-        <text x="180.7142857142857" y="106" text-anchor="middle">06</text>
+        <text x="147.85714285714283" y="106" text-anchor="middle">06</text>
 
-        <rect class="bar" x="200.6428571428571" y="76.64285714285714" width="25.857142857142854" height="15.357142857142858"><title>2026-10-07: 6 views</title></rect>
+        <rect class="bar" x="167.78571428571428" y="76.64285714285714" width="25.857142857142854" height="15.357142857142858"><title>2026-10-07: 6 views</title></rect>
 
-        <text x="213.57142857142853" y="106" text-anchor="middle">07</text>
+        <text x="180.7142857142857" y="106" text-anchor="middle">07</text>
 
-        <rect class="bar is-best" x="233.49999999999997" y="18.5" width="25.857142857142854" height="73.5"><title>2026-10-08: 28 views</title></rect>
-        <text class="peak" x="246.4285714285714" y="13" text-anchor="middle">28</text>
-        <text x="246.4285714285714" y="106" text-anchor="middle">08</text>
+        <rect class="bar is-best" x="200.6428571428571" y="18.5" width="25.857142857142854" height="73.5"><title>2026-10-08: 28 views</title></rect>
+        <text class="peak" x="213.57142857142853" y="13" text-anchor="middle">28</text>
+        <text x="213.57142857142853" y="106" text-anchor="middle">08</text>
 
-        <rect class="bar" x="266.35714285714283" y="81.92857142857143" width="25.857142857142854" height="10.071428571428571"><title>2026-10-09: 4 views</title></rect>
+        <rect class="bar" x="233.49999999999997" y="81.92857142857143" width="25.857142857142854" height="10.071428571428571"><title>2026-10-09: 4 views</title></rect>
 
-        <text x="279.2857142857143" y="106" text-anchor="middle">09</text>
+        <text x="246.4285714285714" y="106" text-anchor="middle">09</text>
 
-        <rect class="bar" x="299.21428571428567" y="84.57142857142857" width="25.857142857142854" height="7.428571428571429"><title>2026-10-10: 3 views</title></rect>
+        <rect class="bar" x="266.35714285714283" y="84.57142857142857" width="25.857142857142854" height="7.428571428571429"><title>2026-10-10: 3 views</title></rect>
 
-        <text x="312.1428571428571" y="106" text-anchor="middle">10</text>
+        <text x="279.2857142857143" y="106" text-anchor="middle">10</text>
 
-        <rect class="bar" x="332.07142857142856" y="89.85714285714286" width="25.857142857142854" height="2.142857142857143"><title>2026-10-11: 1 views</title></rect>
+        <rect class="bar" x="299.21428571428567" y="89.85714285714286" width="25.857142857142854" height="2.142857142857143"><title>2026-10-11: 1 views</title></rect>
 
-        <text x="345" y="106" text-anchor="middle">11</text>
+        <text x="312.1428571428571" y="106" text-anchor="middle">11</text>
 
-        <rect class="bar" x="364.9285714285714" y="84.57142857142857" width="25.857142857142854" height="7.428571428571429"><title>2026-10-12: 3 views</title></rect>
+        <rect class="bar" x="332.07142857142856" y="84.57142857142857" width="25.857142857142854" height="7.428571428571429"><title>2026-10-12: 3 views</title></rect>
 
-        <text x="377.85714285714283" y="106" text-anchor="middle">12</text>
+        <text x="345" y="106" text-anchor="middle">12</text>
 
-        <rect class="bar" x="397.7857142857142" y="87.21428571428571" width="25.857142857142854" height="4.785714285714286"><title>2026-10-13: 2 views</title></rect>
+        <rect class="bar" x="364.9285714285714" y="87.21428571428571" width="25.857142857142854" height="4.785714285714286"><title>2026-10-13: 2 views</title></rect>
 
-        <text x="410.71428571428567" y="106" text-anchor="middle">13</text>
+        <text x="377.85714285714283" y="106" text-anchor="middle">13</text>
 
-        <rect class="bar" x="430.6428571428571" y="89.85714285714286" width="25.857142857142854" height="2.142857142857143"><title>2026-10-14: 1 views</title></rect>
+        <rect class="bar" x="397.7857142857142" y="89.85714285714286" width="25.857142857142854" height="2.142857142857143"><title>2026-10-14: 1 views</title></rect>
 
-        <text x="443.57142857142856" y="106" text-anchor="middle">14</text>
+        <text x="410.71428571428567" y="106" text-anchor="middle">14</text>
+
+        <rect class="bar" x="430.6428571428571" y="79.28571428571429" width="25.857142857142854" height="12.714285714285714"><title>2026-10-15: 5 views</title></rect>
+
+        <text x="443.57142857142856" y="106" text-anchor="middle">15</text>
 
       <line class="base" x1="0" x2="460" y1="92.5" y2="92.5"></line>
     </svg>
@@ -1787,31 +1787,31 @@ h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;back
     <ul class="t-repos">
 
         <li class="is-hi" style="--v:1.000">
-          <span>GUI-for-RePKG</span><b>28</b><i></i>
+          <span>GUI-for-RePKG</span><b>32</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.429">
-          <span>Stronghold-Protocol</span><b>12</b><i></i>
+        <li class="" style="--v:0.406">
+          <span>Stronghold-Protocol</span><b>13</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.357">
+        <li class="" style="--v:0.313">
           <span>Folio</span><b>10</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.214">
+        <li class="" style="--v:0.188">
           <span>siruimei07.github.io</span><b>6</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.071">
+        <li class="" style="--v:0.063">
           <span>UofT-Courses-Programs</span><b>2</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.036">
+        <li class="" style="--v:0.031">
           <span>rea</span><b>1</b><i></i>
 
         </li>
