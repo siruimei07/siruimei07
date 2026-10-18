@@ -2,7 +2,7 @@
   "version": 1,
   "login": "siruimei07",
   "sourceRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
-  "capturedAt": "2026-10-17T13:45:18.802Z",
+  "capturedAt": "2026-10-18T14:03:02.308Z",
   "repositories": [
     {
       "name": "rea",
@@ -12,11 +12,6 @@
         "count": 1,
         "uniques": 1,
         "views": [
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-10-04T00:00:00Z",
             "count": 0,
@@ -81,6 +76,11 @@
             "timestamp": "2026-10-16T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-17T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -93,11 +93,6 @@
         "count": 4,
         "uniques": 3,
         "views": [
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-10-04T00:00:00Z",
             "count": 0,
@@ -162,6 +157,11 @@
             "timestamp": "2026-10-16T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-17T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -174,11 +174,6 @@
         "count": 10,
         "uniques": 2,
         "views": [
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-10-04T00:00:00Z",
             "count": 0,
@@ -243,6 +238,11 @@
             "timestamp": "2026-10-16T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-17T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -252,14 +252,9 @@
       "fullName": "siruimei07/GUI-for-RePKG",
       "public": true,
       "traffic": {
-        "count": 30,
-        "uniques": 9,
+        "count": 31,
+        "uniques": 10,
         "views": [
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-10-04T00:00:00Z",
             "count": 0,
@@ -324,6 +319,11 @@
             "timestamp": "2026-10-16T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-17T00:00:00Z",
+            "count": 1,
+            "uniques": 1
           }
         ]
       }
@@ -336,11 +336,6 @@
         "count": 2,
         "uniques": 2,
         "views": [
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-10-04T00:00:00Z",
             "count": 0,
@@ -405,6 +400,11 @@
             "timestamp": "2026-10-16T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-17T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -417,11 +417,6 @@
         "count": 13,
         "uniques": 6,
         "views": [
-          {
-            "timestamp": "2026-10-03T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-10-04T00:00:00Z",
             "count": 0,
@@ -484,6 +479,11 @@
           },
           {
             "timestamp": "2026-10-16T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-10-17T00:00:00Z",
             "count": 0,
             "uniques": 0
           }
