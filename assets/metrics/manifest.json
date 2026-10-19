@@ -2,12 +2,12 @@
   "version": 1,
   "assets": {
     "isocalendar-light.svg": {
-      "current": "isocalendar-light.ecd10bf97b751cbd.svg",
-      "previous": "isocalendar-light.a1c84c069b0782e5.svg"
+      "current": "isocalendar-light.183a12d7fb4dd3ae.svg",
+      "previous": "isocalendar-light.ecd10bf97b751cbd.svg"
     },
     "isocalendar-dark.svg": {
-      "current": "isocalendar-dark.b04cb5f1935b800b.svg",
-      "previous": "isocalendar-dark.1c9404c0058e1d62.svg"
+      "current": "isocalendar-dark.bc385ddd65efccdd.svg",
+      "previous": "isocalendar-dark.b04cb5f1935b800b.svg"
     },
     "languages-card-light.svg": {
       "current": "languages-card-light.13c11042fa8f918f.svg",
@@ -26,12 +26,12 @@
       "previous": "activity-dark.6470f1d109dcf25a.svg"
     },
     "traffic-light.svg": {
-      "current": "traffic-light.98f5d73c841e473d.svg",
-      "previous": "traffic-light.3d98d6f9d2379382.svg"
+      "current": "traffic-light.a9e21caa60519ae1.svg",
+      "previous": "traffic-light.98f5d73c841e473d.svg"
     },
     "traffic-dark.svg": {
-      "current": "traffic-dark.455ac3a6438efb60.svg",
-      "previous": "traffic-dark.6b0aec484027a8f3.svg"
+      "current": "traffic-dark.0e1e98bb1e470cb8.svg",
+      "previous": "traffic-dark.455ac3a6438efb60.svg"
     }
   }
 }
