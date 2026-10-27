@@ -1718,68 +1718,68 @@ h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;back
 
 
 <section class="traffic-card">
-  <h2 class="field rl-head"><span class="tag">Repository traffic</span><small class="zh">仓库访问</small><span class="readout">CAPTURED 2026-10-26</span></h2>
+  <h2 class="field rl-head"><span class="tag">Repository traffic</span><small class="zh">仓库访问</small><span class="readout">CAPTURED 2026-10-27</span></h2>
 
-    <div class="t-total"><b>22</b><small>PAGE VIEWS</small></div>
-    <div class="t-sub"><span>Daily reported views · UTC</span><span>Oct 12, 2026 – Oct 25, 2026</span></div>
+    <div class="t-total"><b>19</b><small>PAGE VIEWS</small></div>
+    <div class="t-sub"><span>Daily reported views · UTC</span><span>Oct 13, 2026 – Oct 26, 2026</span></div>
     <svg class="t-chart" xmlns="http://www.w3.org/2000/svg" width="460" height="112" viewBox="0 0 460 112" role="img" aria-label="Daily repository page views">
       <line class="grid" x1="0" x2="460" y1="55" y2="55"></line><line class="grid" x1="0" x2="460" y1="18" y2="18"></line>
 
-        <rect class="bar" x="3.5" y="70.3" width="25.857142857142854" height="21.7"><title>2026-10-12: 3 views</title></rect>
+        <rect class="bar" x="3.5" y="77.7" width="25.857142857142854" height="14.3"><title>2026-10-13: 2 views</title></rect>
 
-        <text x="16.428571428571427" y="106" text-anchor="middle">12</text>
+        <text x="16.428571428571427" y="106" text-anchor="middle">13</text>
 
-        <rect class="bar" x="36.357142857142854" y="77.7" width="25.857142857142854" height="14.3"><title>2026-10-13: 2 views</title></rect>
+        <rect class="bar" x="36.357142857142854" y="85.1" width="25.857142857142854" height="6.9"><title>2026-10-14: 1 views</title></rect>
 
-        <text x="49.28571428571428" y="106" text-anchor="middle">13</text>
+        <text x="49.28571428571428" y="106" text-anchor="middle">14</text>
 
-        <rect class="bar" x="69.21428571428571" y="85.1" width="25.857142857142854" height="6.9"><title>2026-10-14: 1 views</title></rect>
+        <rect class="bar" x="69.21428571428571" y="55.5" width="25.857142857142854" height="36.5"><title>2026-10-15: 5 views</title></rect>
 
-        <text x="82.14285714285714" y="106" text-anchor="middle">14</text>
-
-        <rect class="bar" x="102.07142857142856" y="55.5" width="25.857142857142854" height="36.5"><title>2026-10-15: 5 views</title></rect>
-
-        <text x="114.99999999999999" y="106" text-anchor="middle">15</text>
+        <text x="82.14285714285714" y="106" text-anchor="middle">15</text>
 
 
 
-        <text x="147.85714285714283" y="106" text-anchor="middle">16</text>
+        <text x="114.99999999999999" y="106" text-anchor="middle">16</text>
 
-        <rect class="bar" x="167.78571428571428" y="85.1" width="25.857142857142854" height="6.9"><title>2026-10-17: 1 views</title></rect>
+        <rect class="bar" x="134.92857142857142" y="85.1" width="25.857142857142854" height="6.9"><title>2026-10-17: 1 views</title></rect>
 
-        <text x="180.7142857142857" y="106" text-anchor="middle">17</text>
+        <text x="147.85714285714283" y="106" text-anchor="middle">17</text>
 
-        <rect class="bar is-best" x="200.6428571428571" y="18.5" width="25.857142857142854" height="73.5"><title>2026-10-18: 10 views</title></rect>
-        <text class="peak" x="213.57142857142853" y="13" text-anchor="middle">10</text>
-        <text x="213.57142857142853" y="106" text-anchor="middle">18</text>
-
-
-
-        <text x="246.4285714285714" y="106" text-anchor="middle">19</text>
+        <rect class="bar is-best" x="167.78571428571428" y="18.5" width="25.857142857142854" height="73.5"><title>2026-10-18: 10 views</title></rect>
+        <text class="peak" x="180.7142857142857" y="13" text-anchor="middle">10</text>
+        <text x="180.7142857142857" y="106" text-anchor="middle">18</text>
 
 
 
-        <text x="279.2857142857143" y="106" text-anchor="middle">20</text>
+        <text x="213.57142857142853" y="106" text-anchor="middle">19</text>
 
 
 
-        <text x="312.1428571428571" y="106" text-anchor="middle">21</text>
+        <text x="246.4285714285714" y="106" text-anchor="middle">20</text>
 
 
 
-        <text x="345" y="106" text-anchor="middle">22</text>
+        <text x="279.2857142857143" y="106" text-anchor="middle">21</text>
 
 
 
-        <text x="377.85714285714283" y="106" text-anchor="middle">23</text>
+        <text x="312.1428571428571" y="106" text-anchor="middle">22</text>
 
 
 
-        <text x="410.71428571428567" y="106" text-anchor="middle">24</text>
+        <text x="345" y="106" text-anchor="middle">23</text>
 
 
 
-        <text x="443.57142857142856" y="106" text-anchor="middle">25</text>
+        <text x="377.85714285714283" y="106" text-anchor="middle">24</text>
+
+
+
+        <text x="410.71428571428567" y="106" text-anchor="middle">25</text>
+
+
+
+        <text x="443.57142857142856" y="106" text-anchor="middle">26</text>
 
       <line class="base" x1="0" x2="460" y1="92.5" y2="92.5"></line>
     </svg>
@@ -1787,27 +1787,27 @@ h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;back
     <ul class="t-repos">
 
         <li class="is-hi" style="--v:1.000">
-          <span>GUI-for-RePKG</span><b>19</b><i></i>
+          <span>GUI-for-RePKG</span><b>17</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.053">
-          <span>rea</span><b>1</b><i></i>
-
-        </li>
-
-        <li class="" style="--v:0.053">
+        <li class="" style="--v:0.059">
           <span>siruimei07.github.io</span><b>1</b><i></i>
 
         </li>
 
-        <li class="" style="--v:0.053">
+        <li class="" style="--v:0.059">
           <span>Stronghold-Protocol</span><b>1</b><i></i>
 
         </li>
 
         <li class="" style="--v:0.000">
           <span>Folio</span><b>0</b><i></i>
+
+        </li>
+
+        <li class="" style="--v:0.000">
+          <span>rea</span><b>0</b><i></i>
 
         </li>
 
