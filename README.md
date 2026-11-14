@@ -33,8 +33,8 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.245471d6e005ef20.svg" />
-    <img src="./assets/metrics/isocalendar-light.cd9244be3c9c119d.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/isocalendar-dark.9623dbe382d0e335.svg" />
+    <img src="./assets/metrics/isocalendar-light.0d470409b646eb16.svg" width="49%" align="top" alt="Half-year isometric contribution calendar with streak and daily contribution statistics." />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/languages-card-dark.9d720271e661e5d7.svg" />
@@ -44,11 +44,11 @@
 
 <p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.6c55b9cee27808cd.svg" />
-    <img src="./assets/metrics/activity-light.37dc1ec14875b60f.svg" width="49%" align="top" alt="Recent public events: up to five GitHub activities from the last 30 days, with Toronto timestamps." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/activity-dark.5b1e4a24e91fbba0.svg" />
+    <img src="./assets/metrics/activity-light.b8be268333e4d7bf.svg" width="49%" align="top" alt="Recent public events: up to five GitHub activities from the last 30 days, with Toronto timestamps." />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.078de615badbe794.svg" />
-    <img src="./assets/metrics/traffic-light.b56955e4dbd4c014.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/traffic-dark.d0de024ff933db68.svg" />
+    <img src="./assets/metrics/traffic-light.c640f783849803ce.svg" width="49%" align="top" alt="Public repositories traffic: page views from dated repository snapshots, with a daily breakdown." />
   </picture>
 </p>

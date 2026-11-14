@@ -1673,34 +1673,34 @@
   }
 </style>
   <style>
-svg{color:#c4c9c2}
-.items-wrapper{box-sizing:border-box;padding:14px 10px 12px;font-family:RLSans,Segoe UI,Arial,sans-serif;font-size:13px;line-height:20px;font-weight:500;color:#c4c9c2;
- box-shadow:inset 0 0 0 1px rgba(224,227,220,0.14);
- background:linear-gradient(#e0e3dc,#e0e3dc) left top/8px 8px no-repeat,linear-gradient(#e0e3dc,#e0e3dc) right top/8px 8px no-repeat,linear-gradient(#e0e3dc,#e0e3dc) left bottom/8px 8px no-repeat,linear-gradient(#e0e3dc,#e0e3dc) right bottom/8px 8px no-repeat}
-h2.rl-head{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:0 0 12px;padding:0;font-size:12px;line-height:18px;font-weight:600;color:#a6b0b1;white-space:nowrap}
-h2.rl-head .tag{display:inline-block;padding:1px 8px 0;background:#e0e3dc;color:#0d1214;font-family:RLSans,Segoe UI,Arial,sans-serif;font-weight:600;font-size:12px;line-height:18px;letter-spacing:.06em;text-transform:uppercase}
-h2.rl-head .zh{font-family:RLZh,RLSans,sans-serif;font-weight:500;font-size:12px;line-height:18px;letter-spacing:.1em;color:#a6b0b1}
-h2.rl-head .readout{margin-left:auto;font-family:RLMono,monospace;font-weight:400;font-size:11px;line-height:18px;letter-spacing:.08em;color:#a6b0b1}
+svg{color:#2f302d}
+.items-wrapper{box-sizing:border-box;padding:14px 10px 12px;font-family:RLSans,Segoe UI,Arial,sans-serif;font-size:13px;line-height:20px;font-weight:500;color:#2f302d;
+ box-shadow:inset 0 0 0 1px rgba(11,12,11,0.14);
+ background:linear-gradient(#0b0c0b,#0b0c0b) left top/8px 8px no-repeat,linear-gradient(#0b0c0b,#0b0c0b) right top/8px 8px no-repeat,linear-gradient(#0b0c0b,#0b0c0b) left bottom/8px 8px no-repeat,linear-gradient(#0b0c0b,#0b0c0b) right bottom/8px 8px no-repeat}
+h2.rl-head{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:0 0 12px;padding:0;font-size:12px;line-height:18px;font-weight:600;color:#5f5d56;white-space:nowrap}
+h2.rl-head .tag{display:inline-block;padding:1px 8px 0;background:#0b0c0b;color:#f6f5f2;font-family:RLSans,Segoe UI,Arial,sans-serif;font-weight:600;font-size:12px;line-height:18px;letter-spacing:.06em;text-transform:uppercase}
+h2.rl-head .zh{font-family:RLZh,RLSans,sans-serif;font-weight:500;font-size:12px;line-height:18px;letter-spacing:.1em;color:#5f5d56}
+h2.rl-head .readout{margin-left:auto;font-family:RLMono,monospace;font-weight:400;font-size:11px;line-height:18px;letter-spacing:.08em;color:#5f5d56}
 h2.rl-bar .tag{position:relative;margin-left:6px}
-h2.rl-bar .tag::before{content:"";position:absolute;left:-7px;top:0;bottom:0;width:2.5px;background:#e0e3dc}
-h3.field{margin:10px 0 4px;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a6b0b1}
+h2.rl-bar .tag::before{content:"";position:absolute;left:-7px;top:0;bottom:0;width:2.5px;background:#0b0c0b}
+h3.field{margin:10px 0 4px;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5f5d56}
 h3.field&gt;svg{display:none}
-h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;background:#e0e3dc}
-.field svg{fill:#a6b0b1}
-.items-wrapper&gt;section&gt;.row&gt;section{margin:0 0 0 6px;padding:2px 0 0 14px;border-left:1px dotted #a6b0b1;font-family:RLMono,monospace;font-size:12px;letter-spacing:.02em}
-.items-wrapper&gt;section&gt;.row&gt;section::after{content:"&gt; ";display:block;height:20px;line-height:20px;color:#a6b0b1;background:linear-gradient(#e0e3dc,#e0e3dc) 16px 4px/7px 13px no-repeat}
+h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;background:#0b0c0b}
+.field svg{fill:#5f5d56}
+.items-wrapper&gt;section&gt;.row&gt;section{margin:0 0 0 6px;padding:2px 0 0 14px;border-left:1px dotted #5f5d56;font-family:RLMono,monospace;font-size:12px;letter-spacing:.02em}
+.items-wrapper&gt;section&gt;.row&gt;section::after{content:"&gt; ";display:block;height:20px;line-height:20px;color:#5f5d56;background:linear-gradient(#0b0c0b,#0b0c0b) 16px 4px/7px 13px no-repeat}
 section.activity{display:grid;grid-template-columns:116px minmax(0,1fr);column-gap:12px;margin:0 0 6px}
-.activity&gt;.timestamp{grid-column:1;grid-row:1;margin:0;padding:0;font-size:12px;line-height:20px;color:#a6b0b1;font-variant-numeric:tabular-nums;letter-spacing:.02em;display:block;white-space:nowrap}
+.activity&gt;.timestamp{grid-column:1;grid-row:1;margin:0;padding:0;font-size:12px;line-height:20px;color:#5f5d56;font-variant-numeric:tabular-nums;letter-spacing:.02em;display:block;white-space:nowrap}
 .activity&gt;.field{grid-column:2;grid-row:1;max-width:none;width:auto;line-height:20px;white-space:normal;overflow:visible}
-.activity&gt;.details{grid-column:2;grid-row:2;padding-left:0;font-size:11px;line-height:18px;color:#a6b0b1;overflow-wrap:anywhere}
+.activity&gt;.details{grid-column:2;grid-row:2;padding-left:0;font-size:11px;line-height:18px;color:#5f5d56;overflow-wrap:anywhere}
 .activity .field&gt;svg,.items-wrapper&gt;section&gt;.row&gt;section&gt;.field&gt;svg{display:none}
 .items-wrapper&gt;section&gt;.row&gt;section&gt;.field::before{content:"&gt; "}
-.activity .content{font-weight:500;text-transform:uppercase;color:#c4c9c2;overflow:visible;overflow-wrap:anywhere}
+.activity .content{font-weight:500;text-transform:uppercase;color:#2f302d;overflow:visible;overflow-wrap:anywhere}
 .activity .content::before{content:"&gt; "}
-.activity .content .repo,.activity .content .issue{text-transform:none;font-weight:400;color:#e0e3dc}
-.activity .details .repo{color:#c4c9c2}
-.activity .code{margin:0 2px;padding:0 4px;border-radius:0;background:none;box-shadow:inset 0 0 0 1px rgba(224,227,220,0.45);font-family:RLMono,monospace;font-size:10.5px;color:#e0e3dc;text-transform:none}
-.items-wrapper&gt;section&gt;.row&gt;section&gt;.row:first-child .content{color:#e0e3dc}</style>
+.activity .content .repo,.activity .content .issue{text-transform:none;font-weight:400;color:#0b0c0b}
+.activity .details .repo{color:#2f302d}
+.activity .code{margin:0 2px;padding:0 4px;border-radius:0;background:none;box-shadow:inset 0 0 0 1px rgba(11,12,11,0.45);font-family:RLMono,monospace;font-size:10.5px;color:#0b0c0b;text-transform:none}
+.items-wrapper&gt;section&gt;.row&gt;section&gt;.row:first-child .content{color:#0b0c0b}</style>
 
   <foreignObject x="0" y="0" width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" class="items-wrapper" style="min-height: 364px;">
@@ -1709,177 +1709,16 @@ section.activity{display:grid;grid-template-columns:116px minmax(0,1fr);column-g
 
 
   <section>
-    <h2 class="field rl-head rl-bar"><span class="tag">Recent public events</span><small class="zh">最近的公开动态</small><span class="readout">5 EVENTS · TORONTO</span></h2>
+    <h2 class="field rl-head rl-bar"><span class="tag">Recent public events</span><small class="zh">最近的公开动态</small><span class="readout">0 EVENTS · TORONTO</span></h2>
     <div class="row">
       <section>
 
 
-
-            <div class="row fill-width">
-              <section class="activity">
-
-
-
-
-
-
-
-
-
-
-
-                  <div class="field">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
-                    <div class="content">
-                      Starred <span class="repo">alejandrobujan/tendedero</span>
-                    </div>
-                  </div>
-
-
-
-                  <div class="timestamp">
-                    2026-10-15 12:16
-                  </div>
-
-              </section>
+            <div class="field">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.75 1.5a.25.25 0 00-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 01.75.75v2.19l2.72-2.72a.75.75 0 01.53-.22h6.5a.25.25 0 00.25-.25v-9.5a.25.25 0 00-.25-.25H1.75zM0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0114.25 13H8.06l-2.573 2.573A1.457 1.457 0 013 14.543V13H1.75A1.75 1.75 0 010 11.25v-9.5zM9 9a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+              No recent activity
             </div>
 
-            <div class="row fill-width">
-              <section class="activity">
-
-
-
-
-
-
-
-
-
-                  <div class="field">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"></path></svg>
-                    <div class="content">
-                      Pushed to <span class="repo">siruimei07/siruimei07</span>
-                    </div>
-                  </div>
-                  <div class="details">
-
-                      <div>on branch <span class="code">main</span></div>
-
-
-                  </div>
-
-
-
-
-
-                  <div class="timestamp">
-                    2026-10-14 22:43
-                  </div>
-
-              </section>
-            </div>
-
-            <div class="row fill-width">
-              <section class="activity">
-
-
-
-
-
-
-
-
-
-                  <div class="field">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"></path></svg>
-                    <div class="content">
-                      Pushed to <span class="repo">siruimei07/siruimei07</span>
-                    </div>
-                  </div>
-                  <div class="details">
-
-                      <div>on branch <span class="code">main</span></div>
-
-
-                  </div>
-
-
-
-
-
-                  <div class="timestamp">
-                    2026-10-14 22:26
-                  </div>
-
-              </section>
-            </div>
-
-            <div class="row fill-width">
-              <section class="activity">
-
-
-
-
-
-
-
-
-
-                  <div class="field">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"></path></svg>
-                    <div class="content">
-                      Pushed to <span class="repo">siruimei07/siruimei07</span>
-                    </div>
-                  </div>
-                  <div class="details">
-
-                      <div>on branch <span class="code">claude/busy-johnson-q2t0hb</span></div>
-
-
-                  </div>
-
-
-
-
-
-                  <div class="timestamp">
-                    2026-10-14 22:26
-                  </div>
-
-              </section>
-            </div>
-
-            <div class="row fill-width">
-              <section class="activity">
-
-                  <div class="field">
-
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
-
-                    <div class="content">
-                      Created new
-                      branch  <span class="code">claude/busy-johnson-q2t0hb</span> in  <span class="repo">siruimei07/siruimei07</span>
-                    </div>
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  <div class="timestamp">
-                    2026-10-14 18:01
-                  </div>
-
-              </section>
-            </div>
 
 
       </section>
