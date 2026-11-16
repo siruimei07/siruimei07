@@ -1718,7 +1718,7 @@ h3.field::before{content:"";flex:none;width:6px;height:6px;margin-right:8px;back
 
 
 <section class="traffic-card">
-  <h2 class="field rl-head"><span class="tag">Repository traffic</span><small class="zh">仓库访问</small><span class="readout">CAPTURED 2026-11-15</span></h2>
+  <h2 class="field rl-head"><span class="tag">Repository traffic</span><small class="zh">仓库访问</small><span class="readout">CAPTURED 2026-11-16</span></h2>
 
     <div class="t-total"><b>7</b><small>PAGE VIEWS</small></div>
     <div class="t-sub"><span>Daily reported views · UTC</span><span>Nov 1, 2026 – Nov 14, 2026</span></div>
