@@ -2,7 +2,7 @@
   "version": 1,
   "login": "siruimei07",
   "sourceRevision": "366f8b9dfe3a59656c67d5dcad9950f59c9bc96d",
-  "capturedAt": "2026-11-16T20:29:22.439Z",
+  "capturedAt": "2026-11-17T19:12:38.031Z",
   "repositories": [
     {
       "name": "rea",
@@ -12,16 +12,6 @@
         "count": 0,
         "uniques": 0,
         "views": [
-          {
-            "timestamp": "2026-11-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-11-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-11-03T00:00:00Z",
             "count": 0,
@@ -79,6 +69,16 @@
           },
           {
             "timestamp": "2026-11-14T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-15T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-16T00:00:00Z",
             "count": 0,
             "uniques": 0
           }
@@ -94,16 +94,6 @@
         "uniques": 1,
         "views": [
           {
-            "timestamp": "2026-11-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-11-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
             "timestamp": "2026-11-03T00:00:00Z",
             "count": 0,
             "uniques": 0
@@ -160,6 +150,16 @@
           },
           {
             "timestamp": "2026-11-14T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-15T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-16T00:00:00Z",
             "count": 0,
             "uniques": 0
           }
@@ -175,16 +175,6 @@
         "uniques": 1,
         "views": [
           {
-            "timestamp": "2026-11-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-11-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
             "timestamp": "2026-11-03T00:00:00Z",
             "count": 0,
             "uniques": 0
@@ -243,6 +233,16 @@
             "timestamp": "2026-11-14T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-15T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-16T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -255,16 +255,6 @@
         "count": 3,
         "uniques": 2,
         "views": [
-          {
-            "timestamp": "2026-11-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-11-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-11-03T00:00:00Z",
             "count": 2,
@@ -324,6 +314,16 @@
             "timestamp": "2026-11-14T00:00:00Z",
             "count": 0,
             "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-15T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-16T00:00:00Z",
+            "count": 0,
+            "uniques": 0
           }
         ]
       }
@@ -336,16 +336,6 @@
         "count": 2,
         "uniques": 2,
         "views": [
-          {
-            "timestamp": "2026-11-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-11-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
           {
             "timestamp": "2026-11-03T00:00:00Z",
             "count": 0,
@@ -403,6 +393,16 @@
           },
           {
             "timestamp": "2026-11-14T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-15T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-16T00:00:00Z",
             "count": 0,
             "uniques": 0
           }
@@ -418,16 +418,6 @@
         "uniques": 0,
         "views": [
           {
-            "timestamp": "2026-11-01T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
-            "timestamp": "2026-11-02T00:00:00Z",
-            "count": 0,
-            "uniques": 0
-          },
-          {
             "timestamp": "2026-11-03T00:00:00Z",
             "count": 0,
             "uniques": 0
@@ -484,6 +474,16 @@
           },
           {
             "timestamp": "2026-11-14T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-15T00:00:00Z",
+            "count": 0,
+            "uniques": 0
+          },
+          {
+            "timestamp": "2026-11-16T00:00:00Z",
             "count": 0,
             "uniques": 0
           }
